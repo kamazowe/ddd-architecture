@@ -24,5 +24,5 @@
       }
     }
   },
-  "tags": ["type:shell","scope:customer"]
+  "tags": ["type:shell", "scope:customer"]
 }

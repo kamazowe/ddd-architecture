@@ -66,7 +66,8 @@ const createAngularLibraryGeneratorSchema = (generatorSchema:Schema,defaultAngul
 
 
 export default async function (tree: Tree, generatorSchema: Schema) {
-  await libraryGenerator(tree, createAngularLibraryGeneratorSchema(generatorSchema,defaultAngularLibraryGeneratorSchema));
+  const tmp = await libraryGenerator(tree, createAngularLibraryGeneratorSchema(generatorSchema,defaultAngularLibraryGeneratorSchema));
+  console.log('tmp',tmp)
   await formatFiles(tree);
   return () => {
     installPackagesTask(tree);
