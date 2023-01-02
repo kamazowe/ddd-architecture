@@ -1,12 +1,14 @@
 import { Tree } from '@nrwl/devkit';
+import { getProjectTags, } from './filter-projects-by-tags.function';
+import { isNoEmptyArray } from './_internal_utils';
+import { moveGenerator } from '@nrwl/workspace';
 import {
   findProjectsToMoveByNames,
   findProjectsToMoveByTags,
-  getProjectTags,
-  ProjectToMove
-} from './filter-projects-by-tags.function';
-import { getUniqueValues, isEmptyArray, isNoEmptyArray } from './utils';
-import { moveGenerator } from '@nrwl/workspace';
+  getProjectDestination,
+  ProjectToMove,
+  ProjectToMoveMap
+} from './project-to-move';
 
 
 export interface GeneratorSchema {
@@ -18,36 +20,22 @@ export interface GeneratorSchema {
   skipFormat?: boolean;
 }
 
-
-class ProjectToMoveMap {
-
-
-  private readonly projects: Map<string, ProjectToMove> = new Map();
-
-  private static getId(value: ProjectToMove): string {
-    return `${value.name}-${value.catalog}`
-  }
-
-  setMany(values: ProjectToMove[]): void {
-    values.forEach(value => {
-      this.projects.set(ProjectToMoveMap.getId(value), value)
-    })
-  }
-
-
-
-  getValues(): ProjectToMove[] {
-    return Array.from(this.projects.values())
-  }
-
-  get size() {
-    return this.projects.size
+const getValidProjectsToMoveByTags = async (tree: Tree, schema: GeneratorSchema): Promise<ProjectToMove[]> => {
+  const projectTags = getProjectTags(schema)
+  if (isNoEmptyArray(projectTags)) {
+    return findProjectsToMoveByTags(tree, projectTags)
+  } else {
+    return []
   }
 }
 
-
-const getDestination = (destination: string, projectCatalog: string): string => {
-  return `${destination}/${projectCatalog}`
+const getValidProjectsToMoveByProjectNames = async (tree: Tree, schema: GeneratorSchema): Promise<ProjectToMove[]> => {
+  if (isNoEmptyArray(schema.projectNames)) {
+    const validProjectNames = schema.projectNames.filter(name => name !== '');
+    return findProjectsToMoveByNames(tree, validProjectNames);
+  } else {
+    return []
+  }
 }
 
 export default async function (tree: Tree, schema: GeneratorSchema) {
@@ -55,18 +43,16 @@ export default async function (tree: Tree, schema: GeneratorSchema) {
   console.log('schema', schema)
   const projectsToMoveMap = new ProjectToMoveMap()
 
-  // project by tags
-  const projectTags = getProjectTags(schema)
-  if (isNoEmptyArray(projectTags)) {
-    const foundProjectsByTags = await findProjectsToMoveByTags(tree, projectTags)
-    projectsToMoveMap.setMany(foundProjectsByTags)
+  // projects by tags
+  const validProjectsToMoveByTags = await getValidProjectsToMoveByTags(tree, schema)
+  if (validProjectsToMoveByTags.length) {
+    projectsToMoveMap.setMany(validProjectsToMoveByTags)
   }
 
-  // selected projects
-  if (isNoEmptyArray(schema.projectNames)) {
-    const validProjectNames = schema.projectNames.filter(name => name !== '');
-    const projectsToMoveByNames = await findProjectsToMoveByNames(tree, validProjectNames);
-    projectsToMoveMap.setMany(projectsToMoveByNames)
+  //  projects by project names
+  const validProjectsToMoveByProjectNames = await getValidProjectsToMoveByProjectNames(tree, schema)
+  if (validProjectsToMoveByProjectNames.length) {
+    projectsToMoveMap.setMany(validProjectsToMoveByProjectNames)
   }
 
   if (projectsToMoveMap.size === 0) {
@@ -77,12 +63,10 @@ export default async function (tree: Tree, schema: GeneratorSchema) {
   await Promise.all(projectsToMoveMap.getValues().map(projectData => {
     return moveGenerator(tree, {
       projectName: projectData.name,
-      destination: getDestination(schema.destination, projectData.catalog),
+      destination: getProjectDestination(schema.destination, projectData.catalog),
       importPath: schema.importPath,
       updateImportPath: schema.updateImportPath,
       skipFormat: schema.skipFormat,
     })
   }))
-  // todo nie odpala się na koncu
-  console.info('Projects have been transferred')
 }
