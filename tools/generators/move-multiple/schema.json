@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "move-multiple",
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "string",
+      "description": "The folder to move the project into.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "projectNames": {
+      "type": "array",
+      "description": "The names of the project to move.",
+      "x-dropdown": "projects"
+    },
+    "projectTags": {
+      "type": "string",
+      "description": "move projects that contain tags. tag separator is ','  e.g. `type:feature,scope:auth`"
+    },
+    "updateImportPath": {
+      "type": "boolean",
+      "description": "Should the generator update the import path to reflect the new location?",
+      "default": true
+    },
+    "importPath": {
+      "type": "string",
+      "description": "The new import path to use in the `tsconfig.base.json`"
+    },
+    "skipFormat": {
+      "type": "boolean",
+      "description": "Skip formatting files"
+    }
+  },
+  "required": ["destination"]
+}

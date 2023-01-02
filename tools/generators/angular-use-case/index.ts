@@ -41,6 +41,7 @@ const defaultAngularLibraryGeneratorSchema: ConfigurableAngularLibraryGeneratorS
   unitTestRunner: UnitTestRunner.Jest
 }
 
+// TODO
 const createAngularLibraryGeneratorSchema = (generatorSchema:Schema,defaultAngularLibraryGeneratorSchema): AngularLibraryGeneratorSchema =>{
   const requiredAngularLibraryGeneratorSchema : RequiredAngularLibraryGeneratorSchema = {
     skipModule: true,
