@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ddd-architecture/client/admin-shell": [
+        "libs/client/admin-shell/src/index.ts"
+      ],
+      "@ddd-architecture/client/customer-shell": [
+        "libs/client/customer-shell/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "angular-use-case",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the library",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "pattern": "^[a-zA-Z].*$"
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the library is placed",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Add tags to the library (used for linting)",
+      "$default": {
+        "$source": "argv",
+        "index": 2
+      }
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to generated selectors",
+      "$default": {
+        "$source": "argv",
+        "index": 3
+      }
+    },
+    "displayBlock": {
+      "type": "boolean",
+      "description": "Specifies if the component generated style will contain `:host { display: block; }`. Disclaimer: This option is only valid when `--standalone` is set to `true`",
+      "default": true
+    },
+    "standalone": {
+      "type": "boolean",
+      "description": "Generate a library that uses a standalone component instead of a module as the entry point.",
+      "default": true
+    }
+  },
+  "required": ["name"]
+}
