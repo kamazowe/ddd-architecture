@@ -21,7 +21,11 @@
       "@ddd-architecture/client/customer-shell": [
         "libs/client/customer-shell/src/index.ts"
       ],
-      "@ddd-architecture/test22": ["libs/test22/src/index.ts"]
+      "@ddd-architecture/client/shared/testx2": [
+        "libs/client/shared/testx2/src/index.ts"
+      ],
+      "@ddd-architecture/test22": ["libs/test22/src/index.ts"],
+      "@ddd-architecture/testx": ["libs/testx/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
