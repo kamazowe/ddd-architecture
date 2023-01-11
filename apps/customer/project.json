@@ -15,8 +15,19 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/customer/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/customer/src/favicon.ico", "apps/customer/src/assets"],
-        "styles": ["apps/customer/src/styles.scss"],
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "node_modules/@taiga-ui/icons/src",
+            "output": "./assets/tui"
+          },
+          "apps/customer/src/favicon.ico",
+          "apps/customer/src/assets"
+        ],
+        "styles": [
+          "apps/customer/src/taiga.less",
+          "apps/customer/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

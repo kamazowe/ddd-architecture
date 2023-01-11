@@ -3,8 +3,6 @@ export interface UIHeader {
   avatarUrl: string | null;
 }
 
-
-
 // outputs
 
 // logoutClicked
