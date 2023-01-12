@@ -1,13 +1,33 @@
-footer {
-    background: #cce7e8;
-    height: 6rem;
-    position: fixed;
+.footer {
+    font-family: Arial, sans-serif;
+    background: #317874;
+    height: 6em;
     bottom: 0;
     width: 100%;
+    position: fixed;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    position: fixed;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    padding: 1rem;
+    font-size: medium;
+    // font-stretch: extra-condensed;
+}
+
+.footer__item {
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: medium;
+    padding: 0;
+}
+
+.footer__item:nth-child(2) {
+    letter-spacing: 3px;
+}
+
+.footer__item:nth-child(2):hover {
+    color: #ee4e34;
 }
