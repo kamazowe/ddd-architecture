@@ -6,7 +6,7 @@ import { PartCardComponent } from '@ddd-architecture/client/use-cases/part/list/
 @Component({
   selector: 'ddd-client-use-cases-part-list-shared-feature',
   standalone: true,
-  imports: [CommonModule,ViewHeaderComponent,PartCardComponent],
+  imports: [CommonModule, ViewHeaderComponent, PartCardComponent],
   templateUrl: './client-use-cases-part-list-shared-feature.component.html',
   styleUrls: ['./client-use-cases-part-list-shared-feature.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

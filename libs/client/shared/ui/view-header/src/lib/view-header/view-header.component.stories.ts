@@ -7,7 +7,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [],
-    })
+    }),
   ],
 } as Meta<ViewHeaderComponent>;
 
@@ -15,7 +15,5 @@ const Template: Story<ViewHeaderComponent> = (args: ViewHeaderComponent) => ({
   props: args,
 });
 
-
 export const Primary = Template.bind({});
-Primary.args = {
-}
+Primary.args = {};
