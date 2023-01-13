@@ -21,6 +21,13 @@ const config: StorybookConfig = {
 
     return config;
   },
+  // TODO add assets to storybook
+  staticDirs: [
+    // { from: '"../../../../../../apps/customer/src/assets"', to: '/assets' },
+    // { from: '"../assets"', to: '/assets' },
+    // "../assets",
+    // "./assets"
+  ],
 };
 
 module.exports = config;

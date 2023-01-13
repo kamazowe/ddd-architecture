@@ -44,8 +44,21 @@
         "outputDir": "dist/storybook/client-shared-infrastructure-storybook-host",
         "configDir": "libs/client/shared/infrastructure/storybook-host/.storybook",
         "browserTarget": "client-shared-infrastructure-storybook-host:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": [
+          "apps/customer/src/taiga.less",
+          "apps/customer/src/styles.scss"
+        ]
       },
+      "assets": [
+        {
+          "glob": "**/*",
+          "input": "node_modules/@taiga-ui/icons/src",
+          "output": "./assets/tui"
+        },
+        "apps/customer/src/favicon.ico",
+        "apps/customer/src/assets"
+      ],
       "configurations": {
         "ci": {
           "quiet": true
