@@ -7,6 +7,7 @@ import {
   ClientCustomerShellComponent,
   shellRoutes,
 } from '@ddd-architecture/client/customer-shell';
+import { ngrxRootProviders } from '@ddd-architecture/client/shared/infrastructure/store/core';
 
 bootstrapApplication(ClientCustomerShellComponent, {
   providers: [
@@ -16,5 +17,6 @@ bootstrapApplication(ClientCustomerShellComponent, {
       TuiRootModule,
     ]),
     provideRouter(shellRoutes),
+    ...ngrxRootProviders,
   ],
 }).catch((err) => console.error(err));
