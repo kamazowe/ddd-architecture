@@ -21,12 +21,15 @@ const config: StorybookConfig = {
 
     return config;
   },
-  // TODO add assets to storybook
   staticDirs: [
-    // { from: '"../../../../../../apps/customer/src/assets"', to: '/assets' },
-    // { from: '"../assets"', to: '/assets' },
-    // "../assets",
-    // "./assets"
+    {
+      from: '../../../../../../libs/client/shared/infrastructure/assets/src/lib/images',
+      to: '/assets/images',
+    },
+    {
+      from: '../../../../../../node_modules/@taiga-ui/icons/src',
+      to: '/assets/tui',
+    },
   ],
 };
 

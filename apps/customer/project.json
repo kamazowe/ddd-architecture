@@ -22,7 +22,11 @@
             "output": "./assets/tui"
           },
           "apps/customer/src/favicon.ico",
-          "apps/customer/src/assets"
+          {
+            "glob": "**/*",
+            "input": "libs/client/shared/infrastructure/assets/src/lib/images",
+            "output": "./assets/images"
+          }
         ],
         "styles": [
           "apps/customer/src/taiga.less",

@@ -21,6 +21,9 @@
       "@ddd-architecture/client/customer-shell": [
         "libs/client/customer-shell/src/index.ts"
       ],
+      "@ddd-architecture/client/shared/infrastructure/assets": [
+        "libs/client/shared/infrastructure/assets/src/index.ts"
+      ],
       "@ddd-architecture/client/shared/infrastructure/storybook-host": [
         "libs/client/shared/infrastructure/storybook-host/src/index.ts"
       ],

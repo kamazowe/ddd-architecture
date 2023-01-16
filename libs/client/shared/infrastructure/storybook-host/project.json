@@ -50,15 +50,6 @@
           "apps/customer/src/styles.scss"
         ]
       },
-      "assets": [
-        {
-          "glob": "**/*",
-          "input": "node_modules/@taiga-ui/icons/src",
-          "output": "./assets/tui"
-        },
-        "apps/customer/src/favicon.ico",
-        "apps/customer/src/assets"
-      ],
       "configurations": {
         "ci": {
           "quiet": true
