@@ -6,7 +6,7 @@ import { provideRouterStore } from '@ngrx/router-store';
 
 export const ngrxRootProviders: EnvironmentProviders[] = [
   provideStore(),
-  provideEffects(),
+  provideEffects([]),
   provideStoreDevtools(),
   provideRouterStore(),
 ];

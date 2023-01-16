@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { partListUseCaseProviders } from '@ddd-architecture/client/use-cases/part/list/customer/use-case';
+import { dashboardUseCaseProviders } from '@ddd-architecture/client/use-cases/dashboard/customer/use-case';
 
 export const shellRoutes: Routes = [
   {
@@ -8,6 +10,7 @@ export const shellRoutes: Routes = [
   },
   {
     path: 'dashboard',
+    providers: dashboardUseCaseProviders,
     loadComponent: () =>
       import(
         '@ddd-architecture/client/use-cases/dashboard/customer/use-case'
@@ -28,6 +31,8 @@ export const shellRoutes: Routes = [
           },
           {
             path: 'list',
+            pathMatch: 'full',
+            providers: partListUseCaseProviders,
             loadComponent: () =>
               import(
                 '@ddd-architecture/client/use-cases/part/list/customer/use-case'
