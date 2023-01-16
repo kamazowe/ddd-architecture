@@ -1,31 +1,22 @@
-<head><script src="https://unpkg.com/feather-icons"></script></head>
-<header>
-    <div class="header__item">
-        <button class="header__hamburger" (click)="onClickMenuIcon()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+<header class="header">
+    <div class="header__menu">
+        <button tuiIconButton appearance="secondary" (click)="onClickMenuIcon()">
+            <tui-svg src="tui::tuiIconMenuLarge"></tui-svg>
         </button>
     </div>
     <div class="header__icons">
-        <button class="header__icon" (click)="onClickCartIcon()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <button tuiIconButton appearance="secondary" (click)="onClickCartIcon()">
+            <tui-svg src="tui::tuiIconCompanyLarge"></tui-svg>
         </button>
-        <button class="header__icon" (click)="onClickAvatarIcon()">
-            <svg *ngIf="avatarAwailable" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
-            <div *ngIf="!avatarAwailable" style="background-color: black;"></div>
+        <button tuiIconButton appearance="secondary" (click)="onClickAvatarIcon()">
+            <tui-svg src="tui::tuiIconPiechartLarge"></tui-svg>
         </button>
-        <span (tuiActiveZoneChange)="onActiveZone($event)">
-            <button class="header__icon">
-            <!-- tuiButton 
-            type="button"
-            [tuiDropdown]="dropdownProfile" 
-            [tuiDropdownManual="open" 
-            (tuiObscured)="onObscured($event)" 
-            (click)="onClickProfileIcon()" -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <tui-hosted-dropdown [content]="dropdown">
+            <button tuiButton type="button" appearance="flat" class="profile__button tui-text_body-l">
+                Profile
             </button>
-                <ng-template #dropdownProfile>
-                <div class="header__profile__dropdown">But there is nothing to choose...</div>
-            </ng-template>
-        </span>
+        </tui-hosted-dropdown>
+        <ng-template #dropdown let-close="close">
+        </ng-template>
     </div>
 </header>

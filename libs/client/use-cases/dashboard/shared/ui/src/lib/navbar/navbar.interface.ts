@@ -6,5 +6,8 @@ export interface UiNavbarElement {
 
 // navbar component output payload: UiNavbarElementPath
 export enum UiNavbarElementPath {
-  parts = 'parts',
+  parts = "parts",
+  machines = "machines",
+  cart = "cart",
+  orders = "orders"
 }

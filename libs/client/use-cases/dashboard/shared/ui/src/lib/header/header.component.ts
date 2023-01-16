@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TuiDropdownModule } from '@taiga-ui/core';
+import { TuiDropdownModule, TuiButtonModule, TuiSvgModule, TuiHostedDropdownModule, TuiHostedDropdownComponent } from '@taiga-ui/core';
 
-// import { UIHeader } from './header.interface';
 @Component({
   selector: 'ddd-header',
   standalone: true,
-  imports: [CommonModule, TuiDropdownModule],
+  imports: [CommonModule, TuiDropdownModule, TuiButtonModule, TuiSvgModule, TuiHostedDropdownModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,11 +16,16 @@ export class HeaderComponent implements OnInit{
   @Output() cartIconClicked = new EventEmitter<void>();
   @Output() avatarIconClicked = new EventEmitter<void>();
 
-  avatarAwailable = false;
+  @ViewChild(TuiHostedDropdownComponent)
+  component?: TuiHostedDropdownComponent;
+
+  readonly items = ["Profile", "Log Out"];
+
   open = false;
 
+  avatarAwailable = false;
+
   ngOnInit(): void {
-    // MORE COMPLEX LOGIC SOON
     this.avatarAwailable = true;
   }
 
@@ -37,16 +41,7 @@ export class HeaderComponent implements OnInit{
   }
 
   onClickProfileIcon(): void {
-    this.open = !this.open;
-  }
-
-  onObscured(obscured: any): void {
-    if (obscured) {
-      this.open = false;
-    }
-  }
-
-  onActiveZone(active: any): void {
-    this.open = active && this.open;
+    this.open = false;
+    this.component?.nativeFocusableElement?.focus();
   }
 }
