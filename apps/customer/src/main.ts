@@ -8,6 +8,7 @@ import {
   shellRoutes,
 } from '@ddd-architecture/client/customer-shell';
 import { ngrxRootProviders } from '@ddd-architecture/client/shared/infrastructure/store/core';
+import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
 
 bootstrapApplication(ClientCustomerShellComponent, {
   providers: [
@@ -18,5 +19,6 @@ bootstrapApplication(ClientCustomerShellComponent, {
     ]),
     provideRouter(shellRoutes),
     ...ngrxRootProviders,
+    ...svgProviders,
   ],
 }).catch((err) => console.error(err));

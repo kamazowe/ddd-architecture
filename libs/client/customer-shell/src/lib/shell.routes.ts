@@ -1,6 +1,11 @@
 import { Routes } from '@angular/router';
 import { partListUseCaseProviders } from '@ddd-architecture/client/use-cases/part/list/customer/use-case';
 import { dashboardUseCaseProviders } from '@ddd-architecture/client/use-cases/dashboard/customer/use-case';
+import { storeNotificationProviders } from '@ddd-architecture/client/shared/infrastructure/notification/data-access';
+import { RouteProviders } from '@ddd-architecture/client/shared/infrastructure/utils';
+
+// TODO create a variable for all env providers
+export const rootProviders: RouteProviders = [];
 
 export const shellRoutes: Routes = [
   {
@@ -10,7 +15,8 @@ export const shellRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    providers: dashboardUseCaseProviders,
+    // TODO move notification providers
+    providers: [...dashboardUseCaseProviders, ...storeNotificationProviders],
     loadComponent: () =>
       import(
         '@ddd-architecture/client/use-cases/dashboard/customer/use-case'

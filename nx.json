@@ -65,6 +65,9 @@
       "standaloneConfig": true,
       "strict": true
     },
+    "workspace-generator:simple-library": {
+      "addModuleSpec": true
+    },
     "@nrwl/angular:component": {
       "style": "scss",
       "changeDetection": "OnPush",

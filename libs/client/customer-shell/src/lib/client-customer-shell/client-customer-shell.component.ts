@@ -1,5 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TuiButtonModule, TuiRootModule, TuiSvgModule } from '@taiga-ui/core';
+import {
+  TuiAlertModule,
+  TuiButtonModule,
+  TuiRootModule,
+  TuiSvgModule,
+} from '@taiga-ui/core';
 import { RouterOutlet } from '@angular/router';
 import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
 
@@ -12,6 +17,7 @@ import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/tai
     TuiButtonModule,
     TuiSvgModule,
     RouterOutlet,
+    TuiAlertModule,
   ],
   providers: [...svgProviders],
   templateUrl: './client-customer-shell.component.html',

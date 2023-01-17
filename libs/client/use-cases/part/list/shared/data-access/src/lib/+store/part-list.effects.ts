@@ -4,6 +4,7 @@ import { catchError, concatMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { PartListActions } from './actions/part-list.actions';
 import { PartListDataService } from '../services/part-list-data.service';
+import { NotificationActions } from '@ddd-architecture/client/shared/infrastructure/notification/data-access';
 
 @Injectable()
 export class PartListEffects {
@@ -18,6 +19,28 @@ export class PartListEffects {
             of(PartListActions.loadPartListsFailure({ error }))
           )
         )
+      )
+    );
+  });
+
+  loadPartListsSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PartListActions.loadPartListsSuccess),
+      map(() =>
+        NotificationActions.showSuccessNotification({
+          payload: { title: null, description: 'loaded parts' },
+        })
+      )
+    );
+  });
+
+  loadPartListsFailure$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PartListActions.loadPartListsFailure),
+      map(() =>
+        NotificationActions.showFailureNotification({
+          payload: { title: null, description: 'something was wrong' },
+        })
       )
     );
   });
