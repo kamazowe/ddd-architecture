@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TuiDropdownModule, TuiButtonModule, TuiSvgModule, TuiHostedDropdownModule, TuiHostedDropdownComponent } from '@taiga-ui/core';
+import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
 
 @Component({
   selector: 'ddd-header',
   standalone: true,
-  imports: [CommonModule, TuiDropdownModule, TuiButtonModule, TuiSvgModule, TuiHostedDropdownModule],
+  imports: [CommonModule, TuiButtonModule, TuiSvgModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,18 +15,14 @@ export class HeaderComponent implements OnInit{
   @Output() menuIconClicked = new EventEmitter<void>();
   @Output() cartIconClicked = new EventEmitter<void>();
   @Output() avatarIconClicked = new EventEmitter<void>();
+  @Output() profileIconClicked = new EventEmitter<void>();
 
-  @ViewChild(TuiHostedDropdownComponent)
-  component?: TuiHostedDropdownComponent;
+  // TODO header: (add dropdown profile menu)
 
-  readonly items = ["Profile", "Log Out"];
-
-  open = false;
-
-  avatarAwailable = false;
+  avatarEnabled = false;
 
   ngOnInit(): void {
-    this.avatarAwailable = true;
+    this.avatarEnabled = true;
   }
 
   onClickMenuIcon(): void {
@@ -41,7 +37,6 @@ export class HeaderComponent implements OnInit{
   }
 
   onClickProfileIcon(): void {
-    this.open = false;
-    this.component?.nativeFocusableElement?.focus();
+    this.profileIconClicked.emit()
   }
 }

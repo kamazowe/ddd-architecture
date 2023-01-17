@@ -1,5 +1,6 @@
 <div class="navbar">
     <ul class="navbar__elements">
+        <li *ngFor="let item of paths" class="navbar__element tui-text_body-l"><a (click)="onSelectLink(item.route)">{{item.label}}</a></li>
         <li class="navbar__element tui-text_body-l"><a (click)="onSelectLink(UiNavbarElementPath.parts)">parts</a></li>
         <li class="navbar__element tui-text_body-l"><a (click)="onSelectLink(UiNavbarElementPath.machines)">machines</a></li>
         <li class="navbar__element tui-text_body-l"><a (click)="onSelectLink(UiNavbarElementPath.cart)">cart</a></li>
