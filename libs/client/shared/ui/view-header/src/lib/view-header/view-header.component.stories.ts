@@ -17,5 +17,12 @@ const Template: Story<ViewHeaderComponent> = (args: ViewHeaderComponent) => ({
   props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Initial = Template.bind({});
+Initial.args = {};
+
+export const WithViewHeaderData = Template.bind({});
+WithViewHeaderData.args = {
+  header: {
+    title: 'my mock',
+  },
+};

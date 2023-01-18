@@ -1,12 +1,22 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { UiViewHeader } from './view-header.interface';
+
 @Component({
   selector: 'ddd-view-header',
   standalone: true,
-  imports: [CommonModule, TuiButtonModule, TuiSvgModule],
+  imports: [JsonPipe],
   templateUrl: './view-header.component.html',
   styleUrls: ['./view-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ViewHeaderComponent {}
+export class ViewHeaderComponent {
+  @Input() header: UiViewHeader | null = null;
+  @Output() backButtonClicked = new EventEmitter<void>();
+}
