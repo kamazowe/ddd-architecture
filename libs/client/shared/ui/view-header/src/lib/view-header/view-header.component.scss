@@ -1,13 +1,8 @@
-:host {
-  display: block;
-  border: 1px dotted red;
-}
-
-.border {
-  border: 1px dotted blue;
-}
-
-img {
-  height: 50px;
-  width: 50px;
+.view-header__wrapper {
+  font-family: (--tui-font-heading-3);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
