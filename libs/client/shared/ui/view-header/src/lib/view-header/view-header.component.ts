@@ -11,7 +11,7 @@ import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
 @Component({
   selector: 'ddd-view-header',
   standalone: true,
-  imports: [JsonPipe, TuiButtonModule, TuiSvgModule ],
+  imports: [JsonPipe, TuiButtonModule, TuiSvgModule],
   templateUrl: './view-header.component.html',
   styleUrls: ['./view-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
