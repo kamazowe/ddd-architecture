@@ -19,13 +19,8 @@ import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
 export class ViewHeaderComponent {
   @Input() header: UiViewHeader | null = null;
   @Output() prevButtonClicked = new EventEmitter<void>();
-  @Output() nextButtonClicked = new EventEmitter<void>();
 
   onClickPrevButton(): void {
     this.prevButtonClicked.emit();
-  }
-
-  onClickNextButton(): void {
-    this.nextButtonClicked.emit();
   }
 }

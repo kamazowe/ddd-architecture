@@ -2,8 +2,5 @@
   <button tuiIconButton appearance="flat" (click)="onClickPrevButton()">
     <tui-svg src="tui::tuiIconChevronLeftLarge"></tui-svg>
   </button>
-  <div>{{header}}</div>
-  <button tuiIconButton appearance="flat" (click)="onClickNextButton()">
-    <tui-svg src="tui::tuiIconChevronRightLarge"></tui-svg>
-  </button>
+  <div>{{header?.title}}</div>
 </div>
