@@ -1,3 +1,46 @@
 :host {
   display: block;
 }
+
+.part-card__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  grid-template-areas: 
+  "image name menu"
+  "image quantity form"
+  "properties properties properties";
+  height: 100vh;
+}
+
+.part-card__img {
+  grid-area: image;
+  background-color: red;
+}
+
+.part-card__name {
+  grid-area: name;
+  background-color: grey;
+  align-self: stretch;
+}
+
+.part-card__menu {
+  grid-area: menu;
+  background-color: pink;
+}
+
+.part-card__info {
+  grid-area: quantity;
+  background-color: yellow;
+}
+
+.part-card__form {
+  grid-area: form;
+  background-color: blue;
+}
+
+.part-card__properties {
+  grid-area: properties;
+  background-color: green;
+}
