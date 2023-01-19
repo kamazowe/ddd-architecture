@@ -71,7 +71,11 @@
       ],
       "@ddd-architecture/client/use-cases/part/list/shared/ui": [
         "libs/client/use-cases/part/list/shared/ui/src/index.ts"
-      ]
+      ],
+      "@ddd-architecture/shared/contracts": [
+        "libs/shared/contracts/src/index.ts"
+      ],
+      "@ddd-architecture/shared/utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
