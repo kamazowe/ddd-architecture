@@ -1,8 +1,57 @@
-<div class="part-card__wrapper">
-    <div class="part-card__img">img</div>
-    <div class="part-card__name">part name</div>
-    <div class="part-card__menu">menu</div>
-    <div class="part-card__info">info (price, stock availability)</div>
-    <div class="part-card__form">form</div>
-    <div class="part-card__properties">properties</div>
+<div class="part-card">
+  <tui-island
+    class="part-card__img"
+    size="s"
+    [hoverable]="true"
+    apparence="flat"
+  >
+    <h3 class="tui-island__title">Image</h3>
+  </tui-island>
+  <tui-island
+    class="part-card__name"
+    size="s"
+    [hoverable]="true"
+    apparence="flat"
+  >
+    <h3 class="tui-island__paragraph grid-card">Part Name</h3>
+    <p class="tui-island__paragraph tui-island__paragraph_button"></p>
+  </tui-island>
+  <tui-island
+    class="part-card__menu grid-card"
+    size="s"
+    [hoverable]="true"
+    apparence="flat"
+  >
+    <button
+      tuiIconButton
+      type="button"
+      apparence="flat"
+      class="part-card__menu-button"
+    >
+      <tui-svg class="part-card__menu-icon">tui::tuiIconMoreVertLarge</tui-svg>
+    </button>
+  </tui-island>
+  <tui-island
+    class="part-card__info grid-card"
+    size="s"
+    [hoverable]="true"
+    apparence="flat"
+  >
+    <h3 class="tui-island__category">Price</h3>
+    <p class="tui-island__paragraph">availability</p>
+  </tui-island>
+  <tui-island
+    class="part-card__form"
+    size="s"
+    [hoverable]="true"
+    apparence="flat"
+  >
+  </tui-island>
+  <tui-island
+    class="part-card__properties grid-card"
+    size="s"
+    [hoverable]="true"
+    apparence="flat"
+  >
+  </tui-island>
 </div>

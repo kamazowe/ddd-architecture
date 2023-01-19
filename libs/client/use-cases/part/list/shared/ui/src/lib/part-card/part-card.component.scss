@@ -2,45 +2,59 @@
   display: block;
 }
 
-.part-card__wrapper {
+.part-card {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
-  grid-template-areas: 
-  "image name menu"
-  "image quantity form"
-  "properties properties properties";
-  height: 100vh;
+  grid-template-columns: 2fr 6fr 4fr;
+  grid-template-rows: repeat(3, 66px);
+  gap: 0.3rem;
+  grid-template-areas:
+    'image name menu'
+    'image quantity form'
+    'properties properties properties';
+  height: 200px;
+  max-width: 800px;
+  padding: 0.3rem;
 }
 
 .part-card__img {
   grid-area: image;
-  background-color: red;
 }
 
 .part-card__name {
   grid-area: name;
-  background-color: grey;
-  align-self: stretch;
+  background: var(--tui-link-night);
 }
 
 .part-card__menu {
   grid-area: menu;
-  background-color: pink;
+  background: white;
+  display: grid;
+}
+
+.part-card__menu-button {
+  justify-self: end;
+  transform: translateY(-16px);
+}
+
+.part-card__menu-icon {
+  color: var(--tui-positive);
 }
 
 .part-card__info {
   grid-area: quantity;
-  background-color: yellow;
+  background-color: white;
 }
 
 .part-card__form {
   grid-area: form;
-  background-color: blue;
+  background-color: white;
 }
 
 .part-card__properties {
   grid-area: properties;
-  background-color: green;
+  background-color: var(--tui-link-night);
+}
+
+.grid-card {
+  // height: fit-content;
 }

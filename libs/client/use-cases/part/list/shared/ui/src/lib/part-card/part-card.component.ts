@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
+import { TuiIslandModule } from '@taiga-ui/kit';
 
 @Component({
   selector: 'ddd-part-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TuiIslandModule, TuiButtonModule, TuiSvgModule],
   templateUrl: './part-card.component.html',
   styleUrls: ['./part-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
