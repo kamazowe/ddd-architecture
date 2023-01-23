@@ -1,5 +1,7 @@
 import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { url } from 'inspector';
+import * as path from 'path';
 import { PartCardComponent } from './part-card.component';
 import { UiPartCard } from './part-card.interface';
 
@@ -57,10 +59,9 @@ const mock: UiPartCard = {
   ],
 };
 
-const imgMock = { ...mock };
-imgMock.image = {
-  src: 'jsdhflsehge',
-  alt: 'ghosduvgesg',
+const imgMock = {
+  ...mock,
+  image: { src: 'assets/images/hello.png', alt: 'hello-part' },
 };
 
 export const NoImage = Template.bind({});
