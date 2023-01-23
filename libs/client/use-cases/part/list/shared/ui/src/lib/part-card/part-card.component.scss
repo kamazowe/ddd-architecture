@@ -48,6 +48,10 @@
   border: none;
 }
 
+.part-card__info:nth-child(1) {
+  font-size: var(--tui-font-text-l);
+}
+
 .part-card__form {
   grid-area: form;
   background-color: white;
