@@ -57,42 +57,11 @@ const mock: UiPartCard = {
   ],
 };
 
-const imgMock: UiPartCard = {
-  id: '[mock] 2123',
-  name: '[mock] partName',
-  image: {
-    src: "ohepfsrhghrsei",
-    alt: "bhsdovlbsulvbr"
-  },
-  price: {
-    value: 120,
-    unit: '$',
-  },
-  available: {
-    isInStock: true,
-  },
-  menu: {
-    displayed: true,
-    options: [],
-  },
-  sellable: {
-    defaultQuantity: 123,
-    displayed: true,
-    enabled: false,
-  },
-  properties: [
-    {
-      label: 'Size',
-      value: '1.2',
-      unit: 'meter',
-    },
-    {
-      label: 'Weight',
-      value: '12',
-      unit: 'kilogram',
-    },
-  ],
-}
+const imgMock = mock;
+imgMock.image = {
+  src: 'jsdhflsehge',
+  alt: 'ghosduvgesg',
+};
 
 export const NoImage = Template.bind({});
 NoImage.args = {
@@ -102,4 +71,4 @@ NoImage.args = {
 export const WithImgae = Template.bind({});
 WithImgae.args = {
   partCard: imgMock,
-}
+};
