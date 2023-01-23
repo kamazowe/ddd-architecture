@@ -57,7 +57,14 @@ const mock: UiPartCard = {
   ],
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
+const imgMock = { ...mock, image:{src: "assets/images/hello.png", alt: "hello-part"} };
+
+export const NoImage = Template.bind({});
+NoImage.args = {
   partCard: mock,
+};
+
+export const WithImgae = Template.bind({});
+WithImgae.args = {
+  partCard: imgMock,
 };

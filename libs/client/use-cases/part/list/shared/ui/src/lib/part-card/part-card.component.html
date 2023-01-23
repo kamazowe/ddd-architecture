@@ -1,11 +1,14 @@
 <div *ngIf="partCard">
   <tui-island class="part-card" size="s" [hoverable]="true" apparence="flat">
     <div class="part-card__img card">
-      <h3 class="tui-island__paragraph">Image</h3>
+      <pre>{{ partCard.image | json }}</pre>
+      <h3 class="tui-island__paragraph">{{ partCard.image }}</h3>
     </div>
     <div class="part-card__name card">
-      <h3 class="tui-island__paragraph"><span class="span-bold">{{ partCard?.name }}</span></h3>
-      <p class="tui-island__paragraph">#{{ partCard?.id }}</p>
+      <h3 class="tui-island__paragraph">
+        <span class="span-bold">{{ partCard.name }}</span>
+      </h3>
+      <p class="tui-island__paragraph">#{{ partCard.id }}</p>
     </div>
     <div class="part-card__menu">
       <button
@@ -17,12 +20,14 @@
       ></button>
     </div>
     <div class="part-card__info card">
-      <p class="tui-island__paragraph ">
-        <span class="span-bold">Price per unit:</span> {{ partCard?.price?.value }}
-        {{ partCard?.price?.unit }}
+      <p class="tui-island__paragraph">
+        <span class="span-bold">Price per unit:</span>
+        {{ partCard.price?.value }}
+        {{ partCard.price?.unit }}
       </p>
       <p class="tui-island__paragraph">
-        <span class="span-bold">In stock:</span> {{ partCard?.available?.isInStock }}
+        <span class="span-bold">In stock:</span>
+        {{ partCard.available?.isInStock }}
       </p>
     </div>
     <div class="part-card__form card">
