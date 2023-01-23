@@ -24,6 +24,7 @@
 
 .part-card__name {
   grid-area: name;
+  border: none;
 }
 
 .part-card__menu {
@@ -44,6 +45,11 @@
 .part-card__info {
   grid-area: quantity;
   background-color: white;
+  border: none;
+}
+
+.part-card__info:nth-child(1) {
+  font-size: var(--tui-font-text-l);
 }
 
 .part-card__form {
@@ -53,4 +59,8 @@
 
 .part-card__properties {
   grid-area: properties;
+}
+
+.span-bold {
+  font-weight: bold;
 }
