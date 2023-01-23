@@ -27,10 +27,6 @@
   border: none;
 }
 
-.part-card__name:nth-child(1) {
-  font: bold;
-}
-
 .part-card__menu {
   grid-area: menu;
   background: white;
@@ -52,10 +48,6 @@
   border: none;
 }
 
-.part-card__info:nth-child(1) span {
-  font: bold;
-}
-
 .part-card__form {
   grid-area: form;
   background-color: white;
@@ -63,4 +55,8 @@
 
 .part-card__properties {
   grid-area: properties;
+}
+
+.span-bold {
+  font: bold;
 }
