@@ -1,3 +1,4 @@
+import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { PartCardComponent } from './part-card.component';
 import { UiPartCard } from './part-card.interface';
@@ -8,6 +9,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [],
+      providers: [...svgProviders],
     }),
   ],
 } as Meta<PartCardComponent>;

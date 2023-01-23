@@ -1,1 +1,30 @@
-<p>part-card works!</p>
+<div>
+  <tui-island class="part-card" size="s" [hoverable]="true" apparence="flat">
+    <div class="part-card__img card">
+      <h3 class="tui-island__paragraph">Image</h3>
+    </div>
+    <div class="part-card__name card">
+      <h3 class="tui-island__paragraph">Part Name</h3>
+      <p class="tui-island__paragraph tui-island__paragraph_button"></p>
+    </div>
+    <div class="part-card__menu">
+      <button
+        tuiIconButton
+        type="button"
+        appearance="flat"
+        icon="tui::tuiIconMoreVertLarge"
+        class="part-card__menu-button"
+      ></button>
+    </div>
+    <div class="part-card__info card">
+      <h3 class="tui-island__paragraph">Price</h3>
+      <p class="tui-island__paragraph">availability</p>
+    </div>
+    <div class="part-card__form card">
+      <h3 class="tui-island__paragraph">Form</h3>
+    </div>
+    <div class="part-card__properties card">
+      <h3 class="tui-island__paragraph">Properties</h3>
+    </div>
+  </tui-island>
+</div>

@@ -1,3 +1,56 @@
-:host {
-  display: block;
+.part-card {
+  display: grid;
+  grid-template-columns: 2fr 6fr 4fr;
+  grid-template-rows: repeat(3, 66px);
+  gap: 0.3rem;
+  grid-template-areas:
+    'image name menu'
+    'image quantity form'
+    'properties properties properties';
+  height: 200px;
+  max-width: 800px;
+  padding: 0.3rem;
+}
+
+.card {
+  padding: 0.5rem;
+  border-radius: calc(4 * var(--tui-radius-l) / 3);
+  border: 1px solid black;
+}
+
+.part-card__img {
+  grid-area: image;
+}
+
+.part-card__name {
+  grid-area: name;
+}
+
+.part-card__menu {
+  grid-area: menu;
+  background: white;
+  display: grid;
+  padding: 0;
+}
+
+.part-card__menu-button {
+  justify-self: end;
+}
+
+.part-card__menu-icon {
+  color: var(--tui-positive);
+}
+
+.part-card__info {
+  grid-area: quantity;
+  background-color: white;
+}
+
+.part-card__form {
+  grid-area: form;
+  background-color: white;
+}
+
+.part-card__properties {
+  grid-area: properties;
 }
