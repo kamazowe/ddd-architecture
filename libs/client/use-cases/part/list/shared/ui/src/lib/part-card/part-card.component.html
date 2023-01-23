@@ -4,8 +4,8 @@
       <h3 class="tui-island__paragraph">Image</h3>
     </div>
     <div class="part-card__name card">
-      <h3 class="tui-island__paragraph">Part Name</h3>
-      <p class="tui-island__paragraph tui-island__paragraph_button"></p>
+      <h3 class="tui-island__paragraph">{{ partCard?.name }}</h3>
+      <p class="tui-island__paragraph">#{{ partCard?.id }}</p>
     </div>
     <div class="part-card__menu">
       <button
@@ -17,8 +17,13 @@
       ></button>
     </div>
     <div class="part-card__info card">
-      <h3 class="tui-island__paragraph">Price</h3>
-      <p class="tui-island__paragraph">availability</p>
+      <h3 class="tui-island__paragraph">
+        <span>Price per unit:</span> {{ partCard?.price?.value }}
+        {{ partCard?.price?.unit }}
+      </h3>
+      <p class="tui-island__paragraph">
+        In stock: {{ partCard?.available?.isInStock }}
+      </p>
     </div>
     <div class="part-card__form card">
       <h3 class="tui-island__paragraph">Form</h3>

@@ -24,6 +24,11 @@
 
 .part-card__name {
   grid-area: name;
+  border: none;
+}
+
+.part-card__name:nth-child(1) {
+  font: bold;
 }
 
 .part-card__menu {
@@ -44,6 +49,11 @@
 .part-card__info {
   grid-area: quantity;
   background-color: white;
+  border: none;
+}
+
+.part-card__info:nth-child(1) span {
+  font: bold;
 }
 
 .part-card__form {
