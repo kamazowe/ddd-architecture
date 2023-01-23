@@ -57,7 +57,7 @@ const mock: UiPartCard = {
   ],
 };
 
-const imgMock = mock;
+const imgMock = { ...mock };
 imgMock.image = {
   src: 'jsdhflsehge',
   alt: 'ghosduvgesg',
