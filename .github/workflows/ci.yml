@@ -3,11 +3,10 @@ name: Verify PR
 on:
   push:
     branches-ignore:
-      - "main"
+      - 'main'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,13 +23,13 @@ jobs:
         run: npm ci
 
       - name: Format
-        run: npm run format:check
+        run: npm run format:ci
+
+      - name: Lint
+        run: npm run lint:ci
 
       - name: Build
         run: npm run build:all
 
-      - name: Lint
-        run: npm run lint:all
-
       - name: Test
-        run: npm run test:all
+        run: npm run test:ci

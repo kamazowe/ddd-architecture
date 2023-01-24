@@ -15,7 +15,10 @@
     "format:check": "nx format:check --base=origin/dev",
     "verify:all": "npm run build:all && npm run test:all && npm run format:check && npm run lint:all",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "test:ci": "nx affected --target=test --base=origin/dev --head=HEAD",
+    "lint:ci": "nx affected --target=lint --base=origin/dev --head=HEAD",
+    "format:ci": "nx format:check --base=origin/dev --head=HEAD"
   },
   "private": true,
   "dependencies": {
