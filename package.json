@@ -17,7 +17,7 @@
     "build": "nx build",
     "test": "nx test",
     "test:ci": "nx affected --target=test --base=origin/dev --head=HEAD",
-    "lint:ci": "nx affected --target=lint --base=origin/dev --head=HEAD",
+    "lint:ci": "nx affected --target=lint --base=dev --head=HEAD",
     "format:ci": "nx format:check --base=origin/dev --head=HEAD"
   },
   "private": true,
