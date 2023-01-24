@@ -11,8 +11,8 @@
     "lint:all": "nx run-many --target=lint --all=true ",
     "build:all": "nx run-many --target=build --all=true ",
     "test:all": "nx run-many --target=test --all=true ",
-    "format:write": "nx format:write",
-    "format:check": "nx format:check",
+    "format:write": "nx format:write --base=origin/dev",
+    "format:check": "nx format:check --base=origin/dev",
     "verify:all": "npm run build:all && npm run test:all && npm run format:check && npm run lint:all",
     "build": "nx build",
     "test": "nx test"
