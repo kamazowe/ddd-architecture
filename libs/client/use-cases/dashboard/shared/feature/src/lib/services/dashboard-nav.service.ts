@@ -3,7 +3,8 @@ import {
   DashboardNav,
   DashboardNavProvider,
 } from '../providers/dashboard-nav.provider';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
+import { Permissions } from '@ddd-architecture/shared/contracts';
 
 // todo mock
 const dashboardNavConst: DashboardNav = {
@@ -23,5 +24,6 @@ const dashboardNavConst: DashboardNav = {
 
 @Injectable()
 export class DashboardNavService implements DashboardNavProvider {
-  nav$: Observable<DashboardNav> = of(dashboardNavConst);
+  // TODO implement link filtering depending on current user permissions
+  nav$ = (permissions: Permissions) => of(dashboardNavConst).pipe();
 }

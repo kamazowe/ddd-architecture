@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs';
+import { Permissions } from '@ddd-architecture/shared/contracts';
 
 export interface DashboardNavLink {
   path: string;
@@ -11,5 +12,5 @@ export interface DashboardNav {
 }
 
 export abstract class DashboardNavProvider {
-  abstract nav$: Observable<DashboardNav>;
+  abstract nav$: (permissions: Permissions) => Observable<DashboardNav>;
 }
