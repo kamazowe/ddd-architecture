@@ -1,10 +1,8 @@
-// navbar component input payload : UIHeader | null
-export interface UIHeader {
+import { UiDropdownAction } from '../button-dropdown/button-dropdown.interface';
+
+export interface UiHeader {
+  // todo UiImage interface
   avatarUrl: string | null;
+  buttonDropdownActionList: UiDropdownAction[];
+  menuIconDisplayed: boolean;
 }
-
-// outputs
-
-// logoutClicked
-// myProfileClicked
-// cartClicked

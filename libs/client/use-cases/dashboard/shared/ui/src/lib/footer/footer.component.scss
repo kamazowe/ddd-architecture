@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.footer {
+  background: var(--tui-positive-night-hover);
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.footer__item {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+.footer__item:nth-child(2) {
+  letter-spacing: 3px;
+}
+
+.footer__item:nth-child(2):hover {
+  color: var(--tui-negative-hover);
+}

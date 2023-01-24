@@ -1,7 +1,4 @@
-export * from './lib/header/header.component';
-
-export * from './lib/footer/footer.component';
-
-export * from './lib/navbar/navbar.component';
-export * from './lib/navbar/navbar.interface';
+export * from './lib/dashboard/dashboard.component';
+export * from './lib/dashboard/dashboard.interface';
 export * from './lib/header/header.interface';
+export * from './lib/navbar/navbar.interface';

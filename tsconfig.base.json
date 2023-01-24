@@ -24,6 +24,9 @@
       "@ddd-architecture/client/shared/infrastructure/assets": [
         "libs/client/shared/infrastructure/assets/src/index.ts"
       ],
+      "@ddd-architecture/client/shared/infrastructure/breakpoints": [
+        "libs/client/shared/infrastructure/breakpoints/src/index.ts"
+      ],
       "@ddd-architecture/client/shared/infrastructure/notification/data-access": [
         "libs/client/shared/infrastructure/notification/data-access/src/index.ts"
       ],

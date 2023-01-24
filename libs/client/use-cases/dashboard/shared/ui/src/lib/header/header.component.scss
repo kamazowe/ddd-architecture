@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+header {
+  background: var(--tui-positive-night-hover);
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 18rem;
+  padding-right: 1rem;
+}
+
+.profile__button {
+  background: var(--tui-positive-night);
+}

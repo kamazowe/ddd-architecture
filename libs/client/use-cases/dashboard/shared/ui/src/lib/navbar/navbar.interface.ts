@@ -1,10 +1,8 @@
-// navbar component input payload : NavbarElement[] | null
 export interface UiNavbarElement {
   label: string;
-  path: UiNavbarElementPath;
+  path: string;
 }
 
-// navbar component output payload: UiNavbarElementPath
-export enum UiNavbarElementPath {
-  parts = 'parts',
+export interface UiNavbar {
+  elements: UiNavbarElement[];
 }

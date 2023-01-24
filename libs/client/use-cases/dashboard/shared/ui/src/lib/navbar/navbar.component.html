@@ -1,1 +1,10 @@
-<p>navbar works!</p>
+<div *ngIf="navbar" class="navbar">
+  <ul class="navbar__elements">
+    <li
+      *ngFor="let item of navbar.elements; trackBy: onTrackBy"
+      class="navbar__element tui-text_body-l"
+    >
+      <a (click)="onSelectLink(item.path)">{{ item.label }}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,25 @@
+<ng-container *ngIf="buttonDropdown">
+  <tui-hosted-dropdown [content]="dropdown">
+    <button
+      tuiButton
+      type="button"
+      appearance="flat"
+      class="profile__button tui-text_body-l"
+    >
+      {{ buttonDropdown.buttonLabel }}
+    </button>
+  </tui-hosted-dropdown>
+  <ng-template #dropdown let-close="close">
+    <tui-data-list *ngIf="buttonDropdown">
+      <tui-opt-group>
+        <button
+          *ngFor="let item of buttonDropdown.actionList; trackBy: onTrackBy"
+          tuiOption
+          (click)="onClick(item.value)"
+        >
+          {{ item.label }}
+        </button>
+      </tui-opt-group>
+    </tui-data-list>
+  </ng-template>
+</ng-container>

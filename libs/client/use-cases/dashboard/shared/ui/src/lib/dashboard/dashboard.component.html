@@ -1,0 +1,34 @@
+<ng-container *ngIf="dashboard">
+  <div class="layout" [ngClass]="{ 'layout--mobile': dashboard.isMobile }">
+    <ddd-header
+      class="layout__header"
+      [header]="dashboard.header"
+      (menuIconClicked)="toggle(true)"
+    ></ddd-header>
+    <ddd-navbar
+      *ngIf="dashboard.isMobile === false; else mobileNavbar"
+      [navbar]="dashboard.navbar"
+      class="layout__navbar layout__navbar--desktop"
+    ></ddd-navbar>
+    <div class="layout__content">
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div class="layout__aside">
+      <!--  TODO  space for dynamic content in the future will be added teleport here-->
+    </div>
+    <ddd-footer class="layout__footer"></ddd-footer>
+  </div>
+
+  <ng-template #mobileNavbar>
+    <div (tuiActiveZoneChange)="toggle($event)">
+      <div *tuiSidebar="open; direction: 'left'">
+        <ddd-navbar
+          [navbar]="dashboard.navbar"
+          class="layout__navbar"
+        ></ddd-navbar>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>

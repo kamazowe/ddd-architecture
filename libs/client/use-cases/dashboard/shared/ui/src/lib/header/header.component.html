@@ -1,1 +1,27 @@
-<p>header works!</p>
+<header *ngIf="_header" class="header">
+  <div class="header__menu">
+    <button
+      *ngIf="_header.menuIconDisplayed"
+      tuiIconButton
+      appearance="secondary"
+      (click)="onClickMenuIcon()"
+    >
+      <tui-svg src="tui::tuiIconMenuLarge"></tui-svg>
+    </button>
+  </div>
+  <div class="header__icons">
+    <button tuiIconButton appearance="secondary" (click)="onClickCartIcon()">
+      <tui-svg src="tui::tuiIconCompanyLarge"></tui-svg>
+    </button>
+    <button tuiIconButton appearance="secondary" (click)="onClickAvatarIcon()">
+      <tui-svg src="tui::tuiIconPiechartLarge"></tui-svg>
+    </button>
+    <ddd-button-dropdown
+      [buttonDropdown]="{
+        actionList: _header.buttonDropdownActionList,
+        buttonLabel: buttonLabel
+      }"
+      (optionClicked)="onClickMyProfileAction($event)"
+    ></ddd-button-dropdown>
+  </div>
+</header>

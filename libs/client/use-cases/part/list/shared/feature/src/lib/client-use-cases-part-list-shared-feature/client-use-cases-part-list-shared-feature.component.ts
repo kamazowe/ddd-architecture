@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViewHeaderComponent } from '@ddd-architecture/client/shared/ui/view-header';
+import { UiViewHeader, ViewHeaderComponent } from '@ddd-architecture/client/shared/ui/view-header';
 import { PartCardComponent } from '@ddd-architecture/client/use-cases/part/list/shared/ui';
 import { Store } from '@ngrx/store';
 import {
@@ -21,6 +21,9 @@ import { PushModule } from '@ngrx/component';
 export class ClientUseCasesPartListSharedFeatureComponent {
   counter$ = this.store.select(PartListSelectors.selectCounter);
   loading$ = this.store.select(PartListSelectors.selectLoading);
+
+  // TODO mock
+  readonly viewHeader: UiViewHeader = {title: 'Part List'};
 
   constructor(private store: Store<PartListState>) {
     this.store.dispatch(PartListActions.loadPartLists());
