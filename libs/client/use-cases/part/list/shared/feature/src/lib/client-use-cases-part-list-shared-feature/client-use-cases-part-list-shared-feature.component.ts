@@ -22,6 +22,7 @@ export class ClientUseCasesPartListSharedFeatureComponent {
   counter$ = this.store.select(PartListSelectors.selectCounter);
   loading$ = this.store.select(PartListSelectors.selectLoading);
 
+
   // TODO mock
   readonly viewHeader: UiViewHeader = {title: 'Part List'};
 
