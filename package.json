@@ -12,12 +12,12 @@
     "build:all": "nx run-many --target=build --all=true ",
     "test:all": "nx run-many --target=test --all=true ",
     "lint:dev": "nx run-many --target=lint --base=origin/dev",
-    "build:dev": "nx run-many --target=build --base=origin/dev",
+    "build": "nx run-many --target=build",
     "test:dev": "nx run-many --target=test --base=origin/dev",
     "format:write": "nx format:write --base=origin/dev",
     "format:check": "nx format:check --base=origin/dev",
-    "verify:dev": "npm run format:check && npm run test:dev && npm run lint:dev && npm run build:dev",
-    "verify:all": "npm run format:check && npm run test:all && npm run lint:all && npm run build:all"
+    "verify:dev": "npm run format:check && npm run test:dev && npm run lint:dev && npm run build",
+    "verify:all": "npm run format:check && npm run test:all && npm run lint:all && npm run build"
   },
   "private": true,
   "dependencies": {
