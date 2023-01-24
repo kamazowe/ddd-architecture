@@ -11,14 +11,13 @@
     "lint:all": "nx run-many --target=lint --all=true ",
     "build:all": "nx run-many --target=build --all=true ",
     "test:all": "nx run-many --target=test --all=true ",
+    "lint:dev": "nx run-many --target=lint --base=origin/dev",
+    "build:dev": "nx run-many --target=build --base=origin/dev",
+    "test:dev": "nx run-many --target=test --base=origin/dev",
     "format:write": "nx format:write --base=origin/dev",
     "format:check": "nx format:check --base=origin/dev",
-    "verify:all": "npm run build:all && npm run test:all && npm run format:check && npm run lint:all",
-    "build": "nx build",
-    "test": "nx test",
-    "test:ci": "nx affected --target=test --base=origin/dev --head=HEAD",
-    "lint:ci": "nx affected --target=lint --base=dev --head=HEAD",
-    "format:ci": "nx format:check --base=origin/dev --head=HEAD"
+    "verify:dev": "npm run format:check && npm run test:dev && npm run lint:dev && npm run build:dev",
+    "verify:all": "npm run format:check && npm run test:all && npm run lint:all && npm run build:all"
   },
   "private": true,
   "dependencies": {
