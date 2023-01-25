@@ -19,8 +19,15 @@
 }
 
 .part-card__img {
+  display: flex;
   grid-area: image;
   border: none;
+  align-items: center;
+}
+
+.img {
+  object-fit: contain;
+  width: 114px;
 }
 
 .part-card__name {

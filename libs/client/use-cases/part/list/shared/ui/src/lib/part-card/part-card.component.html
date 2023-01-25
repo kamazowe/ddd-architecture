@@ -1,9 +1,12 @@
 <div *ngIf="partCard">
   <tui-island class="part-card" size="s" [hoverable]="true" apparence="flat">
-    <div class="part-card__img card" id="img">
-      <pre>{{ partCard.image | json }}</pre>
+    <div class="part-card__img card">
       <h3 class="tui-island__paragraph"></h3>
-      <img src="{{ partCard.image?.src }}" alt="{{ partCard.image?.alt }}" />
+      <img
+        class="img"
+        [src]="partCard.image?.src"
+        [alt]="partCard.image?.alt"
+      />
     </div>
     <div class="part-card__name card">
       <h3 class="tui-island__paragraph">
