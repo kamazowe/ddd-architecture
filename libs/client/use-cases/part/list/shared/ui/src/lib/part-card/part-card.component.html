@@ -3,7 +3,7 @@
     <div class="part-card__img card" id="img">
       <pre>{{ partCard.image | json }}</pre>
       <h3 class="tui-island__paragraph"></h3>
-      <img src="{{ partcard.image.src }}" alt="{{ partCard.image.alt }}" />
+      <img src="{{ partCard.image?.src }}" alt="{{ partCard.image?.alt }}" />
     </div>
     <div class="part-card__name card">
       <h3 class="tui-island__paragraph">
