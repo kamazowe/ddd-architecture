@@ -10,29 +10,27 @@
   height: 200px;
   max-width: 800px;
   padding: 0.3rem;
-}
-
-.card {
-  padding: 0.5rem;
-  border-radius: calc(4 * var(--tui-radius-l) / 3);
-  border: 1px solid black;
+  overflow: hidden;
 }
 
 .part-card__img {
   display: flex;
+  align-items: flex-start;
   grid-area: image;
   border: none;
-  align-items: center;
+  padding: 0.5rem;
+  overflow: hidden;
 }
 
 .img {
-  object-fit: contain;
-  width: 114px;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .part-card__name {
   grid-area: name;
   border: none;
+  padding: 0.5rem;
 }
 
 .part-card__menu {
@@ -54,6 +52,7 @@
   grid-area: quantity;
   background-color: white;
   border: none;
+  padding: 0.5rem;
 }
 
 .part-card__info:nth-child(1) {
@@ -63,12 +62,14 @@
 .part-card__form {
   grid-area: form;
   background-color: white;
+  padding: 0.5rem;
 }
 
 .part-card__properties {
   grid-area: properties;
+  padding: 0.5rem;
 }
 
-.span-bold {
+.bold {
   font-weight: bold;
 }

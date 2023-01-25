@@ -14,4 +14,6 @@ import { UiPartCard } from './part-card.interface';
 })
 export class PartCardComponent {
   partCard: UiPartCard | null = null;
+
+  defaultImage = 'assets/images/Placeholder-image.png';
 }
