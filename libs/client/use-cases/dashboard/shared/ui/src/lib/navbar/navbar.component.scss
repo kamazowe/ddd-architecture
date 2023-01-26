@@ -2,15 +2,28 @@
   display: block;
 }
 .navbar {
-  background-color: var(--tui-success-bg);
-  color: white;
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  padding: 0.5rem 1rem;
+  width: fit-content;
+  height: 100%;
+}
+
+.left {
+  margin-right: 2rem;
+  margin-left: 0.5rem;
+  min-width: 10rem;
+  width: 10rem;
 }
 
 .navbar__item {
   margin-bottom: 0.25rem;
+  font: var(--tui-font-text-l);
+  color: var(--tui-negative-night);
+}
+
+.navbar__item__link {
+  color: var(--tui-support-02);
+}
+
+.navbar-item__link:hover {
+  color: var(--tui-link-hover);
 }
