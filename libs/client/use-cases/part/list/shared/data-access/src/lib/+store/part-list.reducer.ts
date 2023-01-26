@@ -1,36 +1,46 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import { PartListActions } from './actions/part-list.actions';
+import { createReducer, on } from '@ngrx/store';
+import {
+  PartListActions,
+  PartListPageActions,
+} from './actions/part-list.actions';
+import { GetPartListResponsePayload } from '@ddd-architecture/shared/contracts';
+import {
+  DefaultErrorType,
+  errorResultState,
+  initialResultState,
+  loadedResultState,
+  loadingResultState,
+  ResultState,
+} from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
 export const partListFeatureKey = 'partList';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface PartListState {
-  counter: number;
-  loading: boolean;
+  partList: ResultState<GetPartListResponsePayload, DefaultErrorType>;
 }
 
 export const initialState: PartListState = {
-  counter: 0,
-  loading: false,
+  partList: initialResultState(),
 };
 
 export const reducer = createReducer(
   initialState,
 
-  on(PartListActions.loadPartLists, (state) => ({
+  on(PartListPageActions.partListPageEnter, (state) => ({
     ...state,
     loading: true,
+    partList: loadingResultState(state.partList),
   })),
-  on(PartListActions.loadPartListsSuccess, (state, action) => ({
+  on(PartListActions.partListLoadedSuccess, (state, action) => ({
     ...state,
-    loading: false,
-    counter: state.counter + 1,
+    partList: loadedResultState(action.payload),
   })),
-  on(PartListActions.loadPartListsFailure, (state, action) => ({
+  on(PartListActions.partListLoadedFailure, (state, action) => ({
     ...state,
-    loading: false,
+    partList: errorResultState(state.partList, { error: true }),
   })),
-  on(PartListActions.leavePartListsView, (state, action) => ({
-    ...initialState,
+  on(PartListPageActions.partListPageLeave, (state, action) => ({
+    ...state,
+    partList: { ...initialState.partList },
   }))
 );

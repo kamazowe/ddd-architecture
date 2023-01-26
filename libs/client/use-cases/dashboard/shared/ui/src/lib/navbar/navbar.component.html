@@ -1,10 +1,12 @@
-<div *ngIf="navbar" class="navbar">
-  <ul class="navbar__elements">
-    <li
-      *ngFor="let item of navbar.elements; trackBy: onTrackBy"
-      class="navbar__element tui-text_body-l"
-    >
-      <a (click)="onSelectLink(item.path)">{{ item.label }}</a>
-    </li>
-  </ul>
-</div>
+<ul *ngIf="navbar" class="navbar card-primary">
+  <li
+    *ngFor="let item of navbar.elements; trackBy: onTrackBy"
+    class="navbar__item tui-text_body-l"
+  >
+    <p>
+      <a (click)="onSelectLink(item.path)" tuiLink mode="positive">
+        {{ item.label }}
+      </a>
+    </p>
+  </li>
+</ul>

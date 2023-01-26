@@ -22,7 +22,7 @@ export interface GetPartListItemResponsePayload {
 }
 
 // TODO in the future, we want to make the label fields dependent on the language
-interface PartProperty {
+export interface PartProperty {
   name: TranslatedCode;
   value: TranslatedCode;
   unit: TranslatedCode;
