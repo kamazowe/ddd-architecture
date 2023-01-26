@@ -8,7 +8,7 @@ export type DefaultErrorType = true;
 
 export type CallStateError<ErrorType> = { error: ErrorType };
 
-export type CallState<ErrorType = void> =
+export type CallState<ErrorType = DefaultErrorType> =
   | LoadingState
   | CallStateError<ErrorType>;
 

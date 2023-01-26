@@ -1,31 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, concatMap, map } from 'rxjs/operators';
-import { of } from 'rxjs';
-import { PartListActions } from './actions/part-list.actions';
+import { map } from 'rxjs/operators';
+import {
+  PartListActions,
+  PartListPageActions,
+} from './actions/part-list.actions';
 import { PartListDataService } from '../services/part-list-data.service';
 import { NotificationActions } from '@ddd-architecture/client/shared/infrastructure/notification/data-access';
+import { fetch } from '@nrwl/angular';
 
 @Injectable()
 export class PartListEffects {
   loadPartLists$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(PartListActions.loadPartLists),
-      concatMap(() =>
-        /** An EMPTY observable only emits completion. Replace with your own observable API request */
-        this.service.loadPartList().pipe(
-          map((data) => PartListActions.loadPartListsSuccess({ data })),
-          catchError((error) =>
-            of(PartListActions.loadPartListsFailure({ error }))
-          )
-        )
-      )
+      ofType(PartListPageActions.partListPageEnter),
+      fetch({
+        run: () => {
+          return this.service
+            .loadPartList()
+            .pipe(
+              map((payload) =>
+                PartListActions.partListLoadedSuccess({ payload })
+              )
+            );
+        },
+        onError: (action: unknown, error: unknown) => {
+          return PartListActions.partListLoadedFailure({ error: true });
+        },
+      })
     );
   });
 
-  loadPartListsSuccess$ = createEffect(() => {
+  partListLoadedSuccess$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(PartListActions.loadPartListsSuccess),
+      ofType(PartListActions.partListLoadedSuccess),
       map(() =>
         NotificationActions.showSuccessNotification({
           payload: { title: null, description: 'loaded parts' },
@@ -36,7 +44,7 @@ export class PartListEffects {
 
   loadPartListsFailure$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(PartListActions.loadPartListsFailure),
+      ofType(PartListActions.partListLoadedFailure),
       map(() =>
         NotificationActions.showFailureNotification({
           payload: { title: null, description: 'something was wrong' },

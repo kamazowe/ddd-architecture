@@ -6,17 +6,22 @@ export const selectPartListState =
     fromPartList.partListFeatureKey
   );
 
-const selectCounter = createSelector(
+const selectPartListResultState = createSelector(
   selectPartListState,
-  (state) => state.counter
+  (state) => state.partList
 );
-const selectLoading = createSelector(
-  selectPartListState,
-  (state) => state.loading
+
+const selectPartListCallState = createSelector(
+  selectPartListResultState,
+  (state) => state.callState
+);
+
+const selectPartList = createSelector(
+  selectPartListResultState,
+  (state) => state.result
 );
 
 export const PartListSelectors = {
-  selectPartListState,
-  selectCounter,
-  selectLoading,
+  selectPartListCallState,
+  selectPartList,
 };
