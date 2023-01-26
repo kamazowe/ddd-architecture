@@ -13,5 +13,7 @@ import { UiPartCard } from './part-card.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PartCardComponent {
-  @Input() partCard: UiPartCard | null = null;
+  partCard: UiPartCard | null = null;
+
+  defaultImage = 'assets/images/Placeholder-image.png';
 }
