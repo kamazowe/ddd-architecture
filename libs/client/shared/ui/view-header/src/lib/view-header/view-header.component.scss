@@ -1,8 +1,10 @@
-.view-header__wrapper {
-  font-family: (--tui-font-heading-3);
+.view-header {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
   align-items: center;
+  margin-bottom: 2rem;
+  padding: 0.25rem;
+  box-shadow: 2px 1px 2px rgb(0 0 0 / 8%);
 }

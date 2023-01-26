@@ -7,11 +7,11 @@ import {
 } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { UiNavbar } from './navbar.interface';
-
+import { TuiLinkModule } from '@taiga-ui/core';
 @Component({
   selector: 'ddd-navbar',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor, TuiLinkModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

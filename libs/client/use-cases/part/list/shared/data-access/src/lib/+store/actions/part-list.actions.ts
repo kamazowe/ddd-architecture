@@ -1,22 +1,28 @@
 import { createAction, props } from '@ngrx/store';
+import { GetPartListResponsePayload } from '@ddd-architecture/shared/contracts';
+import { DefaultErrorType } from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
-const loadPartLists = createAction('[PartList] Load PartLists');
-
-const loadPartListsSuccess = createAction(
-  '[PartList] Load PartLists Success',
-  props<{ data: any }>()
+const partListPageEnter = createAction('[Part List Page] page list page enter');
+const partListPageLeave = createAction(
+  '[Part List Page ] part list page leave'
 );
 
-const loadPartListsFailure = createAction(
-  '[PartList] Load PartLists Failure',
-  props<{ error: any }>()
+const partListLoadedSuccess = createAction(
+  '[Page List] Page List Loaded Success',
+  props<{ payload: GetPartListResponsePayload }>()
 );
 
-const leavePartListsView = createAction('[PartList] leave PartLists View');
+const partListLoadedFailure = createAction(
+  '[Page List] Page List Loaded Failure',
+  props<{ error: DefaultErrorType }>()
+);
 
 export const PartListActions = {
-  loadPartLists,
-  loadPartListsSuccess,
-  loadPartListsFailure,
-  leavePartListsView,
+  partListLoadedSuccess,
+  partListLoadedFailure,
+};
+
+export const PartListPageActions = {
+  partListPageEnter,
+  partListPageLeave,
 };

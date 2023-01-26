@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
 import { TuiIslandModule } from '@taiga-ui/kit';
@@ -13,5 +13,5 @@ import { UiPartCard } from './part-card.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PartCardComponent {
-  partCard: UiPartCard | null = null;
+  @Input() partCard: UiPartCard | null = null;
 }

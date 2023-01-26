@@ -3,7 +3,8 @@
 }
 
 header {
-  background: var(--tui-positive-night-hover);
+  background: var(--tui-base-01);
+  box-shadow: 5px 2px 5px rgb(0 0 0 / 8%);
   height: 4rem;
   width: 100%;
   display: flex;
