@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ddd-component-library",
+  "title": "Create a component library",
+  "description": "Creates an Angular component library.",
+  "type": "object",
+
+  "cli": "nx",
+  "properties": {
+    "libraryName": {
+      "type": "string",
+      "description": "The name of the library.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the library?",
+      "pattern": "^[a-zA-Z].*$"
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the library is placed."
+    },
+    "tags": {
+      "type": "string",
+      "description": "Add tags to the library (used for linting)."
+    },
+    "componentName": {
+      "type": "string",
+      "description": "The name of the component.",
+      "x-prompt": "What name would you like to use for the component?",
+      "pattern": "^[a-zA-Z].*$"
+    },
+    "export": {
+      "type": "boolean",
+      "default": true,
+      "description": "Should component be added to barrel file?"
+    },
+    "skipTests": {
+      "type": "boolean",
+      "description": "Skip generating tests for a component?"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["componentName", "libraryName"],
+  "examplesFile": "../../../docs/library-examples.md"
+}

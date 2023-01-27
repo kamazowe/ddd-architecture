@@ -17,7 +17,8 @@
     "format:write": "nx format:write --base=origin/dev",
     "format:check": "nx format:check --base=origin/dev",
     "verify:dev": "npm run format:check && npm run test:dev && npm run lint:dev && npm run build",
-    "verify:all": "npm run format:check && npm run test:all && npm run lint:all && npm run build"
+    "verify:all": "npm run format:check && npm run test:all && npm run lint:all && npm run build",
+    "test:generators": "jest --config tools/jest.config.ts"
   },
   "private": true,
   "dependencies": {

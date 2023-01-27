@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ddd-data-access-library",
+  "title": "Create a library",
+  "description": "Creates an Data Access with ngrx library.",
+  "type": "object",
+
+  "cli": "nx",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the library.",
+      "default": "data-access",
+      "x-prompt": "What name would you like to use for the library?",
+      "pattern": "^[a-zA-Z].*$"
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the library is placed."
+    },
+    "tags": {
+      "type": "string",
+      "description": "Add tags to the library (used for linting)."
+    },
+    "ngrxFeatureName": {
+      "type": "string",
+      "description": "What is the name of the ngrx feature?"
+    },
+    "apiActions": {
+      "type": "boolean",
+      "description": "Create sample actions for success and error ?",
+      "default": true
+    },
+    "skipTests": {
+      "type": "boolean",
+      "description": "Skip generating tests for ngrx and data service?"
+    },
+    "dataServiceEnabled": {
+      "type": "boolean",
+      "description": "Is a data service to be generated?",
+      "default": true
+    },
+    "actionPrefix": {
+      "type": "string",
+      "description": "An example prefix describing the event for example actions",
+      "default": "Load"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name", "ngrxFeatureName"],
+  "examplesFile": "../../../docs/library-examples.md"
+}
