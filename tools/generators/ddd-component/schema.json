@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ddd-component",
+  "title": "Create a component",
+  "description": "Creates an Angular component.",
+  "type": "object",
+
+  "cli": "nx",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the component.",
+      "x-prompt": "What name would you like to use for the library?",
+      "pattern": "^[a-zA-Z].*$"
+    },
+    "project": {
+      "type": "string",
+      "description": "For which project is the component to be added?",
+      "x-dropdown": "projects"
+    },
+    "export": {
+      "type": "boolean",
+      "default": true,
+      "description": "Should component be added to barrel file?"
+    },
+    "skipTests": {
+      "type": "boolean",
+      "description": "Skip generating tests for a component?"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name", "project"],
+  "examplesFile": "../../../docs/library-examples.md"
+}
