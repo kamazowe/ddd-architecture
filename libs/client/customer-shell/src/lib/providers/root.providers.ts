@@ -9,6 +9,7 @@ import { provideRouter } from '@angular/router';
 import { shellRoutes } from '../shell.routes';
 import { ngrxRootProviders } from '@ddd-architecture/client/shared/infrastructure/store/core';
 import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
+import { HttpClientModule } from '@angular/common/http';
 
 export const rootProviders: RouteProviders = [
   importProvidersFrom([
@@ -16,6 +17,7 @@ export const rootProviders: RouteProviders = [
     BrowserAnimationsModule,
     TuiRootModule,
     TuiAlertModule,
+    HttpClientModule,
   ]),
   provideRouter(shellRoutes),
   ...ngrxRootProviders,
