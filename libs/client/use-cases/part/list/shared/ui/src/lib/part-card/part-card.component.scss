@@ -54,6 +54,9 @@
   background-color: white;
   border: none;
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .part-card__info:nth-child(1) {
@@ -79,3 +82,5 @@
 .bold {
   font-weight: bold;
 }
+
+// var(--tui-neutral-bg-night)

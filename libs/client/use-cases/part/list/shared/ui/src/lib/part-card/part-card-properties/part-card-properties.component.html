@@ -1,11 +1,10 @@
 <div class="properties">
   <div *ngFor="let property of partCardProperties" class="property">
-    <p class="tui-island__paragraph">
+    <p class="property__row">
       <span class="bold">Label: </span>{{ property.label }}
     </p>
-    <p class="tui-island__paragraph">
-      <span class="bold">Value: </span>{{ property.value
-      }}<span class="bold">{{ property.unit }}</span>
+    <p>
+      <span class="bold">Value: </span>{{ property.value }}{{ property.unit }}
     </p>
   </div>
 </div>
