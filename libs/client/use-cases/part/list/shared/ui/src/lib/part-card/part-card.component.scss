@@ -61,9 +61,14 @@
 }
 
 .part-card__form {
+  display: grid;
   grid-area: form;
   background-color: white;
   padding: 0.5rem;
+}
+
+.part-card__form-button {
+  justify-self: end;
 }
 
 .part-card__properties {
