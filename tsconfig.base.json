@@ -81,6 +81,21 @@
       "@ddd-architecture/client/use-cases/part/list/shared/ui": [
         "libs/client/use-cases/part/list/shared/ui/src/index.ts"
       ],
+      "@ddd-architecture/server/customer-bff/core": [
+        "libs/server/customer-bff/core/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/infrastructure/env": [
+        "libs/server/customer-bff/infrastructure/env/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/infrastructure/logging": [
+        "libs/server/customer-bff/infrastructure/logging/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/mocks": [
+        "libs/server/customer-bff/mocks/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/shell": [
+        "libs/server/customer-bff/shell/src/index.ts"
+      ],
       "@ddd-architecture/shared/contracts": [
         "libs/shared/contracts/src/index.ts"
       ],

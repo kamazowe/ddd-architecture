@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CONFIG_ENV } from '@ddd-architecture/server/customer-bff/infrastructure/env';
 
 describe('AppController', () => {
   let app: TestingModule;
@@ -9,7 +10,12 @@ describe('AppController', () => {
   beforeAll(async () => {
     app = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [
+        {
+          provide: CONFIG_ENV.KEY,
+          useValue: jest.fn()
+        },
+        AppService],
     }).compile();
   });
 
