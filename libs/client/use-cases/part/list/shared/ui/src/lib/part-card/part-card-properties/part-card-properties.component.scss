@@ -1,0 +1,15 @@
+.properties {
+  display: flex;
+  flex: row nowrap;
+  padding: 0.5rem;
+}
+
+.property {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
