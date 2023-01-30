@@ -65,6 +65,10 @@
       "standaloneConfig": true,
       "strict": true
     },
+    "@nrwl/nest:module": {
+      "flat": true,
+      "language": "ts"
+    },
     "workspace-generator:simple-library": {
       "addModuleSpec": true
     },
