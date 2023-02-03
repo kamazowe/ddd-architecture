@@ -11,6 +11,12 @@
 .tui-form__row {
   display: flex;
   justify-content: center;
+  flex-basis: auto;
+}
+
+.input {
+  align-items: stretch;
+  width: 250px;
 }
 
 .tui-form__buttons {

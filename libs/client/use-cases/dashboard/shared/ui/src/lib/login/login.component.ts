@@ -8,11 +8,15 @@ import {
 import { CommonModule } from '@angular/common';
 import {
   TuiTextfieldControllerModule,
-  TuiHintModule,
   TuiButtonModule,
   TuiLinkModule,
 } from '@taiga-ui/core';
-import { TuiDataListWrapperModule, TuiIslandModule } from '@taiga-ui/kit';
+import {
+  TuiDataListWrapperModule,
+  TuiIslandModule,
+  TuiInputPasswordModule,
+  TuiInputModule,
+} from '@taiga-ui/kit';
 
 @Component({
   selector: 'ddd-login',
@@ -20,12 +24,13 @@ import { TuiDataListWrapperModule, TuiIslandModule } from '@taiga-ui/kit';
   imports: [
     CommonModule,
     TuiTextfieldControllerModule,
-    TuiHintModule,
     TuiDataListWrapperModule,
     ReactiveFormsModule,
     TuiButtonModule,
     TuiLinkModule,
     TuiIslandModule,
+    TuiInputPasswordModule,
+    TuiInputModule,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
