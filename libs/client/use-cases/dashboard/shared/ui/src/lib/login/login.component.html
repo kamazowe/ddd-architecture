@@ -1,0 +1,51 @@
+<p>dgfuigreoygvrse</p>
+<div class="tui-container">
+  <tui-island>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="form"
+      ngDefaultControl
+    >
+      <h3 class="tui-form__header tui-form__header_margin-top_none">Login</h3>
+      <div class="tui-form__row">
+        <tui-input
+          tuiTextfieldExampleTex="Field placeholder"
+          [formControlName]="'username'"
+          tuiHintContent="Insert your username"
+          class="input"
+          [tuiTextfieldCleaner]="true"
+          [tuiTextfieldSize]="'l'"
+          >Username<span class="tui-required"></span>
+        </tui-input>
+      </div>
+      <div class="tui-form__row">
+        <tui-input-password
+          tuiTextfieldExampleText="Field placeholder"
+          [formControlName]="'password'"
+          tuiHintContent="Insert your password"
+          class="input"
+          [tuiTextfieldCleaner]="true"
+          [tuiTextfieldSize]="'l'"
+          >Input Password<span class="tui-required"></span>
+        </tui-input-password>
+      </div>
+      <div class="tui-form__buttons">
+        <button
+          tuiButton
+          size="l"
+          type="submit"
+          class="tui-form__button"
+          appearance="outline"
+        >
+          Submit
+        </button>
+      </div>
+      <div class="tui-form__field-note">
+        <a tuiLink href="#" mode="negative" class="login__link"
+          >Forgot password?</a
+        ><a tuiLink href="#" mode="positive" class="login__link">Register</a>
+      </div>
+    </form>
+  </tui-island>
+</div>
