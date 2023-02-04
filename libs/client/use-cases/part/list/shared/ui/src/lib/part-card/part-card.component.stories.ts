@@ -23,6 +23,19 @@ Initial.args = {
   partCard: null,
 };
 
+const properties: UiPartCard['properties'] = [
+  {
+    label: 'Size',
+    value: '1.2',
+    unit: 'meter',
+  },
+  {
+    label: 'Weight',
+    value: '12',
+    unit: 'kilogram',
+  },
+];
+
 const mock: UiPartCard = {
   id: '[mock] 2123',
   name: '[mock] partName',
@@ -57,14 +70,24 @@ const mock: UiPartCard = {
   ],
 };
 
-const imgMock = { ...mock, image:{src: "assets/images/hello.png", alt: "hello-part"} };
+const imgMockAndManyProperties = {
+  ...mock,
+  image: { src: 'assets/images/hello.png', alt: 'hello-part' },
+  properties: [
+    ...properties,
+    ...properties,
+    ...properties,
+    ...properties,
+    ...properties,
+  ],
+};
 
 export const NoImage = Template.bind({});
 NoImage.args = {
   partCard: mock,
 };
 
-export const WithImgae = Template.bind({});
-WithImgae.args = {
-  partCard: imgMock,
+export const WithImageAndManyProperties = Template.bind({});
+WithImageAndManyProperties.args = {
+  partCard: imgMockAndManyProperties,
 };

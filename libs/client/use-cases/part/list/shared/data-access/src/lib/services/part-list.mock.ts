@@ -59,6 +59,76 @@ export const partListMock: GetPartListResponsePayload = [
           code: 'AZX',
         },
       },
+      {
+        name: {
+          label: 'Color secondary',
+          code: 'ASD@',
+        },
+        value: {
+          label: 'red',
+          code: 'Z|C2',
+        },
+        unit: {
+          label: '',
+          code: 'AZX',
+        },
+      },
+      {
+        name: {
+          label: 'Weight',
+          code: 'ASD',
+        },
+        value: {
+          label: '12',
+          code: 'Z|C',
+        },
+        unit: {
+          label: 'kilograms',
+          code: 'AZX',
+        },
+      },
+      {
+        name: {
+          label: 'Length',
+          code: 'ASD',
+        },
+        value: {
+          label: '2',
+          code: 'Z|C',
+        },
+        unit: {
+          label: 'meters',
+          code: 'AZX',
+        },
+      },
+      {
+        name: {
+          label: 'Color',
+          code: 'ASD',
+        },
+        value: {
+          label: 'blue',
+          code: 'Z|C',
+        },
+        unit: {
+          label: '',
+          code: 'AZX',
+        },
+      },
+      {
+        name: {
+          label: 'Color secondary',
+          code: 'ASD@',
+        },
+        value: {
+          label: 'red',
+          code: 'Z|C2',
+        },
+        unit: {
+          label: '',
+          code: 'AZX',
+        },
+      },
     ],
   },
   {
@@ -76,7 +146,22 @@ export const partListMock: GetPartListResponsePayload = [
       isInStock: false,
     },
     sellable: false,
-    properties: [],
+    properties: [
+      {
+        name: {
+          label: 'Weight',
+          code: 'ASD',
+        },
+        value: {
+          label: '12',
+          code: 'Z|C',
+        },
+        unit: {
+          label: 'kilograms',
+          code: 'AZX',
+        },
+      },
+    ],
   },
   {
     id: '345',

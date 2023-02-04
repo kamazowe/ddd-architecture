@@ -1,0 +1,18 @@
+<div class="properties">
+  <p
+    *ngIf="partCardProperties?.length"
+    class="properties__label tui-text_body-m"
+  >
+    Part properties:
+  </p>
+  <div class="properties__list">
+    <div *ngFor="let property of partCardProperties" class="property">
+      <p class="property__row">
+        <span class="bold">Label: </span>{{ property.label }}
+      </p>
+      <p>
+        <span class="bold">Value: </span>{{ property.value }}{{ property.unit }}
+      </p>
+    </div>
+  </div>
+</div>

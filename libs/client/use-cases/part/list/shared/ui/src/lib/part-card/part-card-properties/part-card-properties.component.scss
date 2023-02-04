@@ -1,0 +1,22 @@
+.properties__list {
+  display: flex;
+  flex: row nowrap;
+  padding: 0.5rem;
+  overflow: auto;
+}
+
+.property {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+  color: rgba(27, 31, 59, 0.65);
+}
+
+.property__row {
+  margin-bottom: 0.5rem;
+  width: max-content;
+}
+
+.bold {
+  font-weight: bold;
+}
