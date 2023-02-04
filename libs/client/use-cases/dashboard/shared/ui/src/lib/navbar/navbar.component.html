@@ -1,12 +1,19 @@
-<ul *ngIf="navbar" class="navbar card-primary">
-  <li
+<nav
+  *ngIf="navbar"
+  class="navbar card-primary"
+  tuiTabs
+  vertical="left"
+  class="left"
+>
+  <button
+    tuiTab
     *ngFor="let item of navbar.elements; trackBy: onTrackBy"
     class="navbar__item tui-text_body-l"
   >
     <p>
-      <a (click)="onSelectLink(item.path)" tuiLink mode="positive">
+      <a (click)="onSelectLink(item.path)" class="navbar-item__link">
         {{ item.label }}
       </a>
     </p>
-  </li>
-</ul>
+  </button>
+</nav>
