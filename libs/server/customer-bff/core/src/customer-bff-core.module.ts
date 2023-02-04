@@ -1,9 +1,9 @@
-import { Global, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ServerLoggingModule } from '@ddd-architecture/server/customer-bff/infrastructure/logging';
+import { ServerHttpLoggingModule } from '@ddd-architecture/server/customer-bff/infrastructure/http-logging';
+import { ServerEnvModule } from '@ddd-architecture/server/customer-bff/infrastructure/env';
 
-@Global()
 @Module({
-  imports: [ServerLoggingModule],
-  exports: [ServerLoggingModule],
+  imports: [ServerEnvModule, ServerLoggingModule, ServerHttpLoggingModule],
 })
 export class CustomerBffCoreModule {}

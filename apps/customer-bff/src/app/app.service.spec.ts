@@ -16,7 +16,8 @@ describe('AppService', () => {
   describe('getData', () => {
     it('should return "Welcome to customer-bff!"', () => {
       expect(service.getData()).toEqual({
-        message: 'Welcome to customer-bff!',
+        id: '[real] 123',
+        name: 'real name',
       });
     });
   });
