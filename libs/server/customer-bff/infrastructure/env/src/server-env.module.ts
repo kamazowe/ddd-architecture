@@ -11,6 +11,5 @@ import { validate } from './env.validation';
       validate,
     }),
   ],
-  exports: [],
 })
 export class ServerEnvModule {}

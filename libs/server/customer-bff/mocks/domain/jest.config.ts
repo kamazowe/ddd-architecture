@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'server-customer-bff-mocks',
-  preset: '../../../../jest.preset.js',
+  displayName: 'server-customer-bff-mocks-domain',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -9,7 +9,8 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/server/customer-bff/mocks',
+  coverageDirectory:
+    '../../../../../coverage/libs/server/customer-bff/mocks/domain',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

@@ -2,6 +2,13 @@ import { Controller, Get, Inject, Logger } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigType } from '@nestjs/config';
 import { CONFIG_ENV } from '@ddd-architecture/server/customer-bff/core';
+import {
+  appUrl,
+  GetAppResponsePayload,
+} from '@ddd-architecture/shared/contracts';
+import { Observable, of } from 'rxjs';
+import { BffMocks } from '@ddd-architecture/server/customer-bff/mocks/domain';
+import { appMockConfig } from '@ddd-architecture/server/customer-bff/mocks/application';
 
 @Controller()
 export class AppController {
@@ -13,9 +20,9 @@ export class AppController {
     private readonly appService: AppService
   ) {}
 
-  @Get('test-bff')
-  getData() {
-    this.logger.log('test log');
+  @Get(appUrl)
+  @BffMocks(appMockConfig)
+  getData(): GetAppResponsePayload {
     return this.appService.getData();
   }
 }

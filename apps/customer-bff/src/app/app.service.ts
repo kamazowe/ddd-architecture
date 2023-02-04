@@ -1,8 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { GetAppResponsePayload } from '@ddd-architecture/shared/contracts';
 
 @Injectable()
 export class AppService {
-  getData(): { message: string } {
-    return { message: 'Welcome to customer-bff!' };
+  getData(): GetAppResponsePayload {
+    return {
+      id: '[real] 123',
+      name: 'real name',
+    };
   }
 }

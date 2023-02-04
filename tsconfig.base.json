@@ -87,11 +87,23 @@
       "@ddd-architecture/server/customer-bff/infrastructure/env": [
         "libs/server/customer-bff/infrastructure/env/src/index.ts"
       ],
+      "@ddd-architecture/server/customer-bff/infrastructure/http-logging": [
+        "libs/server/customer-bff/infrastructure/http-logging/src/index.ts"
+      ],
       "@ddd-architecture/server/customer-bff/infrastructure/logging": [
         "libs/server/customer-bff/infrastructure/logging/src/index.ts"
       ],
       "@ddd-architecture/server/customer-bff/mocks": [
         "libs/server/customer-bff/mocks/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/mocks/application": [
+        "libs/server/customer-bff/mocks/application/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/mocks/domain": [
+        "libs/server/customer-bff/mocks/domain/src/index.ts"
+      ],
+      "@ddd-architecture/server/customer-bff/mocks/infrastructure": [
+        "libs/server/customer-bff/mocks/infrastructure/src/index.ts"
       ],
       "@ddd-architecture/server/customer-bff/shell": [
         "libs/server/customer-bff/shell/src/index.ts"
