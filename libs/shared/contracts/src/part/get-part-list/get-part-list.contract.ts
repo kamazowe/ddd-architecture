@@ -25,5 +25,5 @@ export interface GetPartListItemResponsePayload {
 export interface PartProperty {
   name: TranslatedCode;
   value: TranslatedCode;
-  unit: TranslatedCode;
+  unit: TranslatedCode | null;
 }
