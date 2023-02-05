@@ -2,7 +2,7 @@ import { EntityId } from '@ddd-architecture/shared/utils';
 import { Image } from '../../common/image.interface';
 import { TranslatedCode } from '../../common/translated-code.type';
 
-export const getPartListUrl = `parts`;
+export const getPartListUrl = `part/list`;
 
 export type GetPartListResponsePayload = GetPartListItemResponsePayload[];
 

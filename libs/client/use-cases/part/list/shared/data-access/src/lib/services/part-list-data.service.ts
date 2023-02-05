@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
-import { delay, Observable, of } from 'rxjs';
-import { GetPartListResponsePayload } from '@ddd-architecture/shared/contracts';
-import { partListMock } from './part-list.mock';
+import { Observable } from 'rxjs';
+import {
+  GetPartListResponsePayload,
+  getPartListUrl,
+} from '@ddd-architecture/shared/contracts';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PartListDataService {
+  private readonly urls = {
+    partList: `api/${getPartListUrl}`,
+  };
+
+  constructor(private httpClient: HttpClient) {}
+
   loadPartList(): Observable<GetPartListResponsePayload> {
-    return of(partListMock).pipe(delay(1000));
+    return this.httpClient.get<GetPartListResponsePayload>(this.urls.partList);
   }
 }

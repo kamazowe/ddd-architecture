@@ -1,14 +1,17 @@
 import { EntityId } from '@ddd-architecture/shared/utils';
 import { Image } from '../../common/image.interface';
 
-export const getCurrentUserUrl = `users/current-user`;
+export const getCurrentUserUrl = `user/current-user`;
 
 // response payload
 export interface GetCurrentUserResponsePayload {
   id: EntityId;
-  name: string;
+  firstName: string;
+  lastName: string;
+  email: string;
   avatar: Image | null;
   permissions: Permissions;
+  address: CurrentUserAddress | null;
 }
 
 export enum PermissionsAction {
@@ -26,3 +29,9 @@ export enum PermissionScope {
 }
 
 export type Permissions = Record<PermissionScope, PermissionAllowedActions>;
+
+export interface CurrentUserAddress {
+  street: string;
+  zipCode: string;
+  city: string;
+}
