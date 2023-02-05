@@ -7,7 +7,6 @@ import {
   GetCurrentUserResponsePayload,
 } from '@ddd-architecture/shared/contracts';
 
-// todo mock
 const permissionsMock: Permissions = {
   [PermissionScope.parts]: {
     [PermissionsAction.read]: true,
@@ -25,7 +24,10 @@ const permissionsMock: Permissions = {
 
 const userMock: GetCurrentUserResponsePayload = {
   id: '[mock] id',
-  name: 'test name',
+  firstName: 'test name',
+  lastName: 'test name 2',
+  email: 'test@test.com',
+  address: null,
   avatar: {
     src: 'assets/images/hello.png',
     alt: 'current user avatar',
