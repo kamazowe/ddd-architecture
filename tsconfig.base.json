@@ -54,6 +54,36 @@
       "@ddd-architecture/client/shared/ui/view-header": [
         "libs/client/shared/ui/view-header/src/index.ts"
       ],
+      "@ddd-architecture/client/use-cases/auth/customer/use-case-changed-password": [
+        "libs/client/use-cases/auth/customer/use-case-changed-password/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/customer/use-case-forgot-password": [
+        "libs/client/use-cases/auth/customer/use-case-forgot-password/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/customer/use-case-login": [
+        "libs/client/use-cases/auth/customer/use-case-login/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/customer/use-case-registration": [
+        "libs/client/use-cases/auth/customer/use-case-registration/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/shared/data-access": [
+        "libs/client/use-cases/auth/shared/data-access/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/shared/feature-changed-password": [
+        "libs/client/use-cases/auth/shared/feature-changed-password/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/shared/feature-forgot-password": [
+        "libs/client/use-cases/auth/shared/feature-forgot-password/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/shared/feature-login": [
+        "libs/client/use-cases/auth/shared/feature-login/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/shared/feature-registration": [
+        "libs/client/use-cases/auth/shared/feature-registration/src/index.ts"
+      ],
+      "@ddd-architecture/client/use-cases/auth/shared/ui": [
+        "libs/client/use-cases/auth/shared/ui/src/index.ts"
+      ],
       "@ddd-architecture/client/use-cases/current-user/details/shared/api": [
         "libs/client/use-cases/current-user/details/shared/api/src/index.ts"
       ],

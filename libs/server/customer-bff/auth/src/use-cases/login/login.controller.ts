@@ -1,6 +1,5 @@
-import { Controller, Get, Inject, Logger, Post } from '@nestjs/common';
+import { Controller, Inject, Logger, Post } from '@nestjs/common';
 import {
-  GetPartListResponsePayload,
   LoginResponsePayload,
   loginUrl,
 } from '@ddd-architecture/shared/contracts';
@@ -20,7 +19,7 @@ export class LoginController {
 
   @Post()
   @BffMocks(getLoginMockConfig)
-  getData(): LoginResponsePayload {
+  handle(): LoginResponsePayload {
     return getLoginMockConfig.mock().value;
   }
 }
