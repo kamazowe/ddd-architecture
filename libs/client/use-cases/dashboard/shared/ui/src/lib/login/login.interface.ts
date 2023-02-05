@@ -1,4 +1,4 @@
-export interface LoginFormValueInterface {
+export interface UiLoginFormValueInterface {
   username: string;
   password: string;
 }
