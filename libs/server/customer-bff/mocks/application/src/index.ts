@@ -2,6 +2,8 @@ export * from './app/app.mock-factory';
 
 export * from './auth/login/login.mock-factory';
 export * from './auth/register/register.mock-factory';
+export * from './auth/forgot-password/forgot-password.mock-factory';
+export * from './auth/changed-password/changed-password.mock-factory';
 
 export * from './user/get-current-user/get-current-user.mock-factory';
 

@@ -2,6 +2,8 @@ export * from './app-test/app.contract';
 
 export * from './auth/login/login.contract';
 export * from './auth/register/register.contract';
+export * from './auth/forgot-password/forgot-password.contract';
+export * from './auth/changed-password/changed-password.contract';
 
 export * from './user/get-current-user/get-current-user.contract';
 
