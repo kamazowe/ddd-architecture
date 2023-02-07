@@ -1,3 +1,31 @@
-:host {
-  display: block;
+.tui-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tui-form__header {
+  display: flex;
+  justify-content: center;
+}
+
+.tui-form__row {
+  display: flex;
+  justify-content: center;
+  flex-basis: auto;
+}
+
+.input {
+  align-items: stretch;
+  width: 250px;
+}
+
+.tui-form__buttons {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.login__link {
+  padding: 1rem;
+  font-size: small;
 }

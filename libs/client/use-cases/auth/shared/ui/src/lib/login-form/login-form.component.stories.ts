@@ -1,17 +1,17 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { LoginComponent } from './login.component';
+import { LoginFormComponent } from './login-form.component';
 
 export default {
-  title: 'LoginComponent',
-  component: LoginComponent,
+  title: 'LoginFormComponent',
+  component: LoginFormComponent,
   decorators: [
     moduleMetadata({
       imports: [],
     }),
   ],
-} as Meta<LoginComponent>;
+} as Meta<LoginFormComponent>;
 
-const Template: Story<LoginComponent> = (args: LoginComponent) => ({
+const Template: Story<LoginFormComponent> = (args: LoginFormComponent) => ({
   props: args,
 });
 
