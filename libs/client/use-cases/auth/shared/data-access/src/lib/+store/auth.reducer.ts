@@ -1,9 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { AuthActions, AuthLoginPageActions } from './auth.actions';
+import { AuthActions } from './auth.actions';
 import {
   CallState,
   LoadingState,
 } from '@ddd-architecture/client/shared/infrastructure/store/utils';
+import { AuthLoginPageActions } from './auth.public-actions';
 
 export const authFeatureKey = 'auth';
 

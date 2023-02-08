@@ -9,13 +9,8 @@ import {
 const dashboardHeaderConst: DashboardHeader = {
   profileActions: [
     {
-      label: 'parts',
-      value: 'parts',
-      enabled: true,
-    },
-    {
-      label: 'machines',
-      value: 'machines',
+      label: 'logout',
+      value: 'logout',
       enabled: true,
     },
   ],
