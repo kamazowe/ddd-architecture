@@ -10,6 +10,9 @@ import { shellRoutes } from '../shell.routes';
 import { ngrxRootProviders } from '@ddd-architecture/client/shared/infrastructure/store/core';
 import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
 import { HttpClientModule } from '@angular/common/http';
+import { storageProviders } from '@ddd-architecture/client/shared/infrastructure/storage';
+import { authTokenProviders } from '@ddd-architecture/client/shared/infrastructure/auth-token';
+import { routerRouteProviders } from '@ddd-architecture/client/shared/infrastructure/router';
 
 export const rootProviders: RouteProviders = [
   importProvidersFrom([
@@ -24,4 +27,7 @@ export const rootProviders: RouteProviders = [
   ...svgProviders,
   ...BreakpointsObserverProvider,
   ...storeNotificationProviders,
+  ...storageProviders,
+  ...authTokenProviders,
+  ...routerRouteProviders,
 ];

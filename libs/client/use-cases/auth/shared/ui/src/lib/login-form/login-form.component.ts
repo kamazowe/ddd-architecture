@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -17,7 +22,6 @@ import {
   TuiInputPasswordModule,
   TuiInputModule,
 } from '@taiga-ui/kit';
-
 
 export interface UiLoginFormValue {
   username: string;
@@ -43,7 +47,6 @@ export interface UiLoginFormValue {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
-
   @Output() submitted = new EventEmitter<UiLoginFormValue>();
 
   loginForm: FormGroup = new FormGroup({

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
   LoginRequestPayload,
+  LoginResponsePayload,
   loginUrl,
 } from '@ddd-architecture/shared/contracts';
 import { HttpClient } from '@angular/common/http';
@@ -16,7 +17,7 @@ export class AuthDataService {
 
   constructor(private httpClient: HttpClient) {}
 
-  login(payload: LoginRequestPayload): Observable<void> {
-    return this.httpClient.post<void>(this.urls.login, payload);
+  login(payload: LoginRequestPayload): Observable<LoginResponsePayload> {
+    return this.httpClient.post<LoginResponsePayload>(this.urls.login, payload);
   }
 }
