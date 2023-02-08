@@ -25,7 +25,9 @@ export class PartListEffects {
             );
         },
         onError: (action: unknown, error: unknown) => {
-          return PartListActions.partListLoadedFailure({ error: true });
+          return PartListActions.partListLoadedFailure({
+            payload: { error: true },
+          });
         },
       })
     );
