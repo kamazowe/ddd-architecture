@@ -18,6 +18,12 @@ import {
   TuiInputModule,
 } from '@taiga-ui/kit';
 
+
+export interface UiLoginFormValue {
+  username: string;
+  password: string;
+}
+
 @Component({
   selector: 'ddd-architecture-login-form',
   standalone: true,
@@ -37,12 +43,15 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
+
+  @Output() submitted = new EventEmitter<UiLoginFormValue>();
+
   loginForm: FormGroup = new FormGroup({
     username: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required),
   });
 
   onSubmit(): void {
-    console.log(this.loginForm.value);
+    this.submitted.emit(this.loginForm.value);
   }
 }
