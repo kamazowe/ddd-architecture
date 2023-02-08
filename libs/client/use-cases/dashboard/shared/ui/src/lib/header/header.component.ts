@@ -10,6 +10,7 @@ import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
 import { ButtonDropdownComponent } from '../button-dropdown/button-dropdown.component';
 import { UiHeader } from './header.interface';
 import { UIButtonDropdown } from '../button-dropdown/button-dropdown.interface';
+import { UiHeaderProvider } from './ui-header.provider';
 
 @Component({
   selector: 'ddd-header',
@@ -29,12 +30,13 @@ export class HeaderComponent {
   @Output() menuIconClicked = new EventEmitter<void>();
   @Output() cartIconClicked = new EventEmitter<void>();
   @Output() avatarIconClicked = new EventEmitter<void>();
-  @Output() profileActionClicked = new EventEmitter<string>();
 
   _header: UiHeader | null = null;
   buttonDropdown: UIButtonDropdown | null = null;
 
   readonly buttonLabel = 'Profile';
+
+  constructor(private uiProvider: UiHeaderProvider) {}
 
   @Input() set header(value: UiHeader) {
     this._header = value;
@@ -57,6 +59,6 @@ export class HeaderComponent {
   }
 
   onClickMyProfileAction(option: string): void {
-    this.profileActionClicked.emit(option);
+    this.uiProvider.profileActionClicked(option);
   }
 }

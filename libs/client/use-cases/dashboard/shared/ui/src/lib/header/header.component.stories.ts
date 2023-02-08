@@ -5,6 +5,12 @@ import {
   headerStoriesMockDesktopWithAvatar,
   headerStoriesMockMobileDevices,
 } from './header.component.stories-mock';
+import { UiHeaderProvider } from './ui-header.provider';
+
+class UiHeaderProviderMock implements UiHeaderProvider {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  profileActionClicked(value: string): void {}
+}
 
 export default {
   title: 'HeaderComponent',
@@ -12,6 +18,12 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [],
+      providers: [
+        {
+          provide: UiHeaderProvider,
+          useClass: UiHeaderProviderMock,
+        },
+      ],
     }),
   ],
 } as Meta<HeaderComponent>;

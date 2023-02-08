@@ -5,15 +5,20 @@ import { authLoginUseCaseRouteProviders } from '@ddd-architecture/client/use-cas
 import { authRegistrationUseCaseRouteProviders } from '@ddd-architecture/client/use-cases/auth/customer/use-case-registration';
 import { authForgotPasswordUseCaseRouteProviders } from '@ddd-architecture/client/use-cases/auth/customer/use-case-forgot-password';
 import { authChangedPasswordUseCaseRouteProviders } from '@ddd-architecture/client/use-cases/auth/customer/use-case-changed-password';
+import {
+  AuthGuard,
+  NoAuthGuard,
+} from '@ddd-architecture/client/shared/infrastructure/auth-token';
 
 export const shellRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'auth',
+    redirectTo: 'dashboard',
   },
   {
     path: 'auth',
+    canActivate: [NoAuthGuard],
     children: [
       {
         path: '',
@@ -60,6 +65,7 @@ export const shellRoutes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [AuthGuard],
     providers: dashboardUseCaseRouteProviders,
     loadComponent: () =>
       import(
