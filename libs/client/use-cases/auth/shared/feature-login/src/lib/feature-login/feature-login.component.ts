@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginRequestPayload } from '@ddd-architecture/shared/contracts';
 import { AuthLoginFeatureProvider } from '../providers/auth-login-feature.provider';
-import { LoginFormComponent } from '@ddd-architecture/client/use-cases/auth/shared/ui';
+import {
+  LoginFormComponent,
+  UiLoginFormValue,
+} from '@ddd-architecture/client/use-cases/auth/shared/ui';
 
 @Component({
   selector: 'ddd-architecture-feature-login',
@@ -17,8 +19,7 @@ export class FeatureLoginComponent {
 
   constructor(private featureProvider: AuthLoginFeatureProvider) {}
 
-  // TODO payload interface
-  onLogin(payload: LoginRequestPayload): void {
+  onLogin(payload: UiLoginFormValue): void {
     this.featureProvider.login(payload);
   }
 }

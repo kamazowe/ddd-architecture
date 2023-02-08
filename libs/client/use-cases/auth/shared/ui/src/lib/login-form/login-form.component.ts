@@ -1,5 +1,16 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+// TODO mock
+export interface UiLoginFormValue {
+  username: string;
+  password: string;
+}
 
 @Component({
   selector: 'ddd-architecture-login-form',
@@ -9,4 +20,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginFormComponent {}
+export class LoginFormComponent {
+  @Output() submitted = new EventEmitter<UiLoginFormValue>();
+
+  // TODO mock
+  onSubmit(): void {
+    const mock: UiLoginFormValue = {
+      username: 'admin',
+      password: 'admin',
+    };
+    this.submitted.emit(mock);
+  }
+}
