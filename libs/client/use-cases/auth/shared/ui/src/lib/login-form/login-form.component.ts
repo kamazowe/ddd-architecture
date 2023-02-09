@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -36,15 +36,11 @@ import {
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginFormComponent implements OnInit {
-  loginForm: FormGroup = new FormGroup({});
-
-  ngOnInit() {
-    this.loginForm = new FormGroup({
-      username: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required),
-    });
-  }
+export class LoginFormComponent {
+  loginForm: FormGroup = new FormGroup({
+    username: new FormControl(null, Validators.required),
+    password: new FormControl(null, Validators.required),
+  });
 
   onSubmit(): void {
     console.log(this.loginForm.value);

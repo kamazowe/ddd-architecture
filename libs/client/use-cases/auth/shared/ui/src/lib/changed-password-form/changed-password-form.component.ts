@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -31,15 +31,11 @@ import {
   styleUrls: ['./changed-password-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChangedPasswordFormComponent implements OnInit {
-  changePasswordForm: FormGroup = new FormGroup({});
-
-  ngOnInit() {
-    this.changePasswordForm = new FormGroup({
-      newPassword: new FormControl(null, Validators.required),
-      replyNewPassword: new FormControl(null, Validators.required),
-    });
-  }
+export class ChangedPasswordFormComponent {
+  changePasswordForm: FormGroup = new FormGroup({
+    newPassword: new FormControl(null, Validators.required),
+    replyNewPassword: new FormControl(null, Validators.required),
+  });
 
   onSubmit(): void {
     console.log(this.changePasswordForm.value);

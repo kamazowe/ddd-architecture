@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -31,14 +31,10 @@ import {
   styleUrls: ['./forgot-password-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ForgotPasswordFormComponent implements OnInit {
-  forgotPasswordForm: FormGroup = new FormGroup({});
-
-  ngOnInit() {
-    this.forgotPasswordForm = new FormGroup({
-      email: new FormControl(null, Validators.required),
-    });
-  }
+export class ForgotPasswordFormComponent {
+  forgotPasswordForm: FormGroup = new FormGroup({
+    email: new FormControl(null, Validators.required),
+  });
 
   onSubmit(): void {
     console.log(this.forgotPasswordForm.value);
