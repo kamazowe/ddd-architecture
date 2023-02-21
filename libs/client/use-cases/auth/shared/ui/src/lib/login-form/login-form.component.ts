@@ -25,6 +25,7 @@ import {
   TuiInputModule,
 } from '@taiga-ui/kit';
 import { AuthLoginFeatureService } from '../../../../feature-login/src/lib/services/auth-login-feature.service';
+import { filterCallState, LoadingState } from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
 export interface UiLoginFormValue {
   username: string;
@@ -54,7 +55,7 @@ export interface UiLoginFormValue {
 export class LoginFormComponent {
   @Output() submitted = new EventEmitter<UiLoginFormValue>();
 
-  loading$ = this.authLoginFeatureService.loginCallState$;
+  loading$ = this.authLoginFeatureService.loginCallState$.pipe(filterCallState([LoadingState.LOADING]));
 
   constructor(public authLoginFeatureService: AuthLoginFeatureService) {}
 

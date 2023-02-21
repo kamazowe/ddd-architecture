@@ -6,7 +6,7 @@ import {
   LoginFormComponent,
   UiLoginFormValue,
 } from '../../../../ui/src/lib/login-form/login-form.component';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { CallState } from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
 @Component({
@@ -18,7 +18,7 @@ import { CallState } from '@ddd-architecture/client/shared/infrastructure/store/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureLoginComponent {
-  loginCallState$: Observable<CallState> = this.featureProvider.loginCallState$;
+  loginCallState$: Observable<CallState> = this.featureProvider.loginCallState$.pipe(tap());
 
   constructor(private featureProvider: AuthLoginFeatureProvider) {}
 
