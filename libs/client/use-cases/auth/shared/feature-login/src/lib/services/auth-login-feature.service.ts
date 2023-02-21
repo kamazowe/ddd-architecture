@@ -1,10 +1,11 @@
-import { first, Observable, of } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import {
   CallState,
   filterCallState,
   LoadingState,
 } from '@ddd-architecture/client/shared/infrastructure/store/utils';
 import { AuthLoginFeatureProvider } from '../providers/auth-login-feature.provider';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { UiLoginFormValue } from '@ddd-architecture/client/use-cases/auth/shared/ui';
 import {
   AuthLoginPageActions,
@@ -19,7 +20,9 @@ import { Router } from '@angular/router';
 export class AuthLoginFeatureService implements AuthLoginFeatureProvider {
   private readonly pageForLoggedInUserUrl = 'dashboard';
 
-  loginCallState$: Observable<CallState> = of(LoadingState.INIT);
+  loginCallState$: Observable<CallState> = this.store.select(
+    AuthSelectors.selectLoginCallState
+  );
 
   constructor(private store: Store<AuthState>, private router: Router) {}
 
