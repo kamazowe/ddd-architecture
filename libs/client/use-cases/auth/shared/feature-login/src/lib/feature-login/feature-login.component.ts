@@ -18,7 +18,8 @@ import { CallState } from '@ddd-architecture/client/shared/infrastructure/store/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureLoginComponent {
-  loginCallState$: Observable<CallState> = this.featureProvider.loginCallState$.pipe(tap());
+  loginCallState$: Observable<CallState> =
+    this.featureProvider.loginCallState$.pipe(tap());
 
   constructor(private featureProvider: AuthLoginFeatureProvider) {}
 
