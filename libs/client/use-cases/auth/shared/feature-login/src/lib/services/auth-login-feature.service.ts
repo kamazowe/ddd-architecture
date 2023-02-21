@@ -21,7 +21,8 @@ export class AuthLoginFeatureService implements AuthLoginFeatureProvider {
   private readonly pageForLoggedInUserUrl = 'dashboard';
 
   loginCallState$: Observable<CallState> = this.store.select(
-    AuthSelectors.selectLoginCallState);
+    AuthSelectors.selectLoginCallState
+  );
 
   constructor(private store: Store<AuthState>, private router: Router) {}
 
