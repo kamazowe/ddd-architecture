@@ -6,7 +6,6 @@ import {
   appUrl,
   GetAppResponsePayload,
 } from '@ddd-architecture/shared/contracts';
-import { Observable, of } from 'rxjs';
 import { BffMocks } from '@ddd-architecture/server/customer-bff/mocks/domain';
 import { appMockConfig } from '@ddd-architecture/server/customer-bff/mocks/application';
 
