@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TuiAlertModule, TuiRootModule } from '@taiga-ui/core';
 import { provideRouter } from '@angular/router';
 import { shellRoutes } from '../shell.routes';
-import { ngrxRootProviders } from '@ddd-architecture/client/shared/infrastructure/store/core';
+import {
+  ngrxRootProviders,
+  ngxsRootProviders,
+} from '@ddd-architecture/client/shared/infrastructure/store/core';
 import { svgProviders } from '@ddd-architecture/client/shared/infrastructure/taiga/feature';
 import { HttpClientModule } from '@angular/common/http';
 import { storageProviders } from '@ddd-architecture/client/shared/infrastructure/storage';
@@ -24,6 +27,7 @@ export const rootProviders: RouteProviders = [
   ]),
   provideRouter(shellRoutes),
   ...ngrxRootProviders,
+  ...ngxsRootProviders,
   ...svgProviders,
   ...BreakpointsObserverProvider,
   ...storeNotificationProviders,
