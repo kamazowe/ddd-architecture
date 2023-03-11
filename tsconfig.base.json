@@ -33,6 +33,9 @@
       "@ddd-architecture/client/shared/infrastructure/breakpoints": [
         "libs/client/shared/infrastructure/breakpoints/src/index.ts"
       ],
+      "@ddd-architecture/client/shared/infrastructure/feature-toggle/repository": [
+        "libs/client/shared/infrastructure/feature-toggle/repository/src/index.ts"
+      ],
       "@ddd-architecture/client/shared/infrastructure/notification/data-access": [
         "libs/client/shared/infrastructure/notification/data-access/src/index.ts"
       ],

@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { storageProviders } from '@ddd-architecture/client/shared/infrastructure/storage';
 import { authTokenProviders } from '@ddd-architecture/client/shared/infrastructure/auth-token';
 import { routerRouteProviders } from '@ddd-architecture/client/shared/infrastructure/router';
+import { repositoryProviders } from './repository.providers';
 
 export const rootProviders: RouteProviders = [
   importProvidersFrom([
@@ -34,4 +35,5 @@ export const rootProviders: RouteProviders = [
   ...storageProviders,
   ...authTokenProviders,
   ...routerRouteProviders,
+  ...repositoryProviders,
 ];
