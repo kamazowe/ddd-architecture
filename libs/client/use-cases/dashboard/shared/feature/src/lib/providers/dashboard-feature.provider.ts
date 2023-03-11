@@ -8,4 +8,6 @@ export abstract class DashboardFeatureProvider implements UiHeaderProvider {
   abstract dashboard$: Observable<UiDashboard>;
 
   abstract profileActionClicked(value: string): void;
+  abstract pageOpened(): void;
+  abstract pageClosed(): void;
 }

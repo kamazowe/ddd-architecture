@@ -24,5 +24,11 @@ import { DashboardFeatureProvider } from '../providers/dashboard-feature.provide
 export class ClientUseCasesDashboardSharedFeatureComponent {
   dashboard$ = this.dashboardFeatureProvider.dashboard$;
 
-  constructor(private dashboardFeatureProvider: DashboardFeatureProvider) {}
+  constructor(private dashboardFeatureProvider: DashboardFeatureProvider) {
+    this.dashboardFeatureProvider.pageOpened();
+  }
+
+  ngOnDestroy(): void {
+    this.dashboardFeatureProvider.pageClosed();
+  }
 }
