@@ -2,8 +2,8 @@ import { CallState } from './result-state';
 import { isErrorCallState } from './is-error-callState.function';
 import { ArrayElement } from '@ddd-architecture/shared/utils';
 
-export const isCallState = <T extends CallState>(
-  source: CallState,
+export const equalCallStateType = <T extends CallState<unknown>>(
+  source: CallState<unknown>,
   searchedCallState: T
 ): source is T => {
   return (
@@ -17,6 +17,6 @@ export const includesCallStates = <T extends CallState[]>(
   searchedCallStates: T
 ): source is ArrayElement<T> => {
   return searchedCallStates.some((findCallState) =>
-    isCallState(source, findCallState)
+    equalCallStateType(source, findCallState)
   );
 };

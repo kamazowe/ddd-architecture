@@ -117,6 +117,9 @@
       "@ddd-architecture/client/use-cases/dashboard/shared/feature": [
         "libs/client/use-cases/dashboard/shared/feature/src/index.ts"
       ],
+      "@ddd-architecture/client/use-cases/dashboard/shared/state": [
+        "libs/client/use-cases/dashboard/shared/state/src/index.ts"
+      ],
       "@ddd-architecture/client/use-cases/dashboard/shared/ui": [
         "libs/client/use-cases/dashboard/shared/ui/src/index.ts"
       ],

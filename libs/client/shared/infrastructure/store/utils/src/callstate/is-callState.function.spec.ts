@@ -1,14 +1,24 @@
-import { isCallState, includesCallStates } from './is-callState.function';
+import {
+  equalCallStateType,
+  includesCallStates,
+} from './is-callState.function';
 import { LoadingState } from './result-state';
 
-describe('isCallState function: ', () => {
+describe('equalCallStateType function: ', () => {
   test('should be truthy', () => {
-    expect(isCallState(LoadingState.LOADED, LoadingState.LOADED)).toBeTruthy();
-    expect(isCallState({ error: true }, { error: true })).toBeTruthy();
+    expect(
+      equalCallStateType(LoadingState.LOADED, LoadingState.LOADED)
+    ).toBeTruthy();
+    expect(equalCallStateType({ error: true }, { error: true })).toBeTruthy();
+    expect(equalCallStateType({ error: 'a' }, { error: 'b' })).toBeTruthy();
   });
   test('should not be truthy', () => {
-    expect(isCallState(LoadingState.INIT, LoadingState.LOADED)).toBeFalsy();
-    expect(isCallState({ error: true }, LoadingState.LOADED)).toBeFalsy();
+    expect(
+      equalCallStateType(LoadingState.INIT, LoadingState.LOADED)
+    ).toBeFalsy();
+    expect(
+      equalCallStateType({ error: true }, LoadingState.LOADED)
+    ).toBeFalsy();
   });
 });
 
