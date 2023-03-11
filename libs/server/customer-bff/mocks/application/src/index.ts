@@ -16,3 +16,5 @@ export * from './cart/get-cart/get-cart.mock-factory';
 export * from './cart/add-item-list-to-cart/add-item-list-to-cart.mock-factory';
 export * from './cart/get-cart-item-count/get-cart-item-count.mock-factory';
 export * from './cart/remove-items-to-cart/remove-item-list-to-cart.mock-factory';
+
+export * from './feature-toggle/get-feature-toggles/get-feature-toggles.mock-factory';
