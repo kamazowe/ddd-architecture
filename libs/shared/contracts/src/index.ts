@@ -18,3 +18,5 @@ export * from './cart/get-cart/get-cart.contract';
 export * from './cart/add-item-list-to-cart/add-item-list-to-cart.contract';
 export * from './cart/get-cart-item-count/get-cart-item-count.contract';
 export * from './cart/remove-items-to-cart/remove-item-list-to-cart.contract';
+
+export * from './feature-toggle/get-feature-toggles/get-feature-toggles.contract';

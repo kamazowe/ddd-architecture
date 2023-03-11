@@ -138,6 +138,9 @@
       "@ddd-architecture/server/customer-bff/core": [
         "libs/server/customer-bff/core/src/index.ts"
       ],
+      "@ddd-architecture/server/customer-bff/feature-toggle": [
+        "libs/server/customer-bff/feature-toggle/src/index.ts"
+      ],
       "@ddd-architecture/server/customer-bff/infrastructure/env": [
         "libs/server/customer-bff/infrastructure/env/src/index.ts"
       ],

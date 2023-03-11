@@ -7,6 +7,7 @@ import { ServerCustomerBffPartModule } from '@ddd-architecture/server/customer-b
 import { ServerCustomerBffCartModule } from '@ddd-architecture/server/customer-bff/cart';
 import { ServerCustomerBffAuthModule } from '@ddd-architecture/server/customer-bff/auth';
 import { ServerCustomerBffUserModule } from '@ddd-architecture/server/customer-bff/user';
+import { ServerCustomerBffFeatureToggleModule } from '@ddd-architecture/server/customer-bff/feature-toggle';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ServerCustomerBffUserModule } from '@ddd-architecture/server/customer-b
     ServerCustomerBffUserModule,
     ServerCustomerBffPartModule,
     ServerCustomerBffCartModule,
+    ServerCustomerBffFeatureToggleModule,
   ],
   controllers: [AppController],
   providers: [AppService],
