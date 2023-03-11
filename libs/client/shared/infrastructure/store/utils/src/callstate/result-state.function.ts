@@ -45,6 +45,13 @@ export const errorResultState = <ResultType, ErrorType>(
   };
 };
 
+export const defaultErrorResultState = <ResultType>(
+  prevResultState: ResultState<ResultType, true>,
+  nextResult?: ResultType | null
+): ResultState<ResultType, true> => {
+  return errorResultState(prevResultState, { error: true }, nextResult);
+};
+
 export const isCallStateError = <T>(
   callState: CallState<T>
 ): callState is CallStateError<T> => {
