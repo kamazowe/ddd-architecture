@@ -53,6 +53,7 @@ export interface UiLoginFormValue {
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [AuthLoginFeatureService],
 })
 export class LoginFormComponent {
   @Output() submitted = new EventEmitter<UiLoginFormValue>();
