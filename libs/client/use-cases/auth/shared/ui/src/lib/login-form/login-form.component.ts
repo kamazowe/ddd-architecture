@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import {
   ChangeDetectionStrategy,
   Component,
@@ -15,6 +16,7 @@ import {
   TuiTextfieldControllerModule,
   TuiButtonModule,
   TuiLinkModule,
+  TuiLoaderModule,
 } from '@taiga-ui/core';
 import {
   TuiDataListWrapperModule,
@@ -22,6 +24,11 @@ import {
   TuiInputPasswordModule,
   TuiInputModule,
 } from '@taiga-ui/kit';
+import { AuthLoginFeatureService } from '../../../../feature-login/src/lib/services/auth-login-feature.service';
+import {
+  filterCallState,
+  LoadingState,
+} from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
 export interface UiLoginFormValue {
   username: string;
@@ -41,13 +48,21 @@ export interface UiLoginFormValue {
     TuiIslandModule,
     TuiInputPasswordModule,
     TuiInputModule,
+    TuiLoaderModule,
   ],
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [AuthLoginFeatureService],
 })
 export class LoginFormComponent {
   @Output() submitted = new EventEmitter<UiLoginFormValue>();
+
+  loading$ = this.authLoginFeatureService.loginCallState$.pipe(
+    filterCallState([LoadingState.LOADING])
+  );
+
+  constructor(public authLoginFeatureService: AuthLoginFeatureService) {}
 
   loginForm: FormGroup = new FormGroup({
     username: new FormControl(null, Validators.required),

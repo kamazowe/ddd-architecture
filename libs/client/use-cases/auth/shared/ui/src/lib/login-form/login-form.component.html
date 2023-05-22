@@ -27,7 +27,17 @@
         </tui-input-password>
       </div>
       <div class="tui-form__buttons form__buttons">
+        <tui-loader
+          *ngIf="(loading$ | async) === null"
+          class="inline-flex tui-space_right-2"
+          [showLoader]="true"
+          [inheritColor]="true"
+          [overlay]="true"
+        >
+          <button tuiButton type="button" appearance="outline">Submit</button>
+        </tui-loader>
         <button
+          *ngIf="loading$ | async"
           tuiButton
           size="l"
           type="submit"

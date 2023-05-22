@@ -1,12 +1,13 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { LoginFormComponent } from './login-form.component';
+import { StoreModule } from '@ngrx/store';
 
 export default {
   title: 'LoginFormComponent',
   component: LoginFormComponent,
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [StoreModule.forRoot({})],
     }),
   ],
 } as Meta<LoginFormComponent>;

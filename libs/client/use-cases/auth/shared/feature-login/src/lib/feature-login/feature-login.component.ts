@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthLoginFeatureProvider } from '../providers/auth-login-feature.provider';
@@ -5,6 +6,8 @@ import {
   LoginFormComponent,
   UiLoginFormValue,
 } from '@ddd-architecture/client/use-cases/auth/shared/ui';
+import { Observable, tap } from 'rxjs';
+import { CallState } from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
 @Component({
   selector: 'ddd-architecture-feature-login',
@@ -15,7 +18,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureLoginComponent {
-  loginCallState$ = this.featureProvider.loginCallState$;
+  loginCallState$: Observable<CallState> =
+    this.featureProvider.loginCallState$.pipe(tap());
 
   constructor(private featureProvider: AuthLoginFeatureProvider) {}
 
