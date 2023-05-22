@@ -5,7 +5,7 @@ import { AuthLoginFeatureProvider } from '../providers/auth-login-feature.provid
 import {
   LoginFormComponent,
   UiLoginFormValue,
-} from '../../../../ui/src/lib/login-form/login-form.component';
+} from '@ddd-architecture/client/use-cases/auth/shared/ui';
 import { Observable, tap } from 'rxjs';
 import { CallState } from '@ddd-architecture/client/shared/infrastructure/store/utils';
 
